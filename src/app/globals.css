@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face{
+ font-family: 'Hanken Grotesk';
+ src: url('/fonts/HankenGrotesk-Variable.ttf') format('truetype');
+ font-weight: 100 900;
 }
 
-@theme inline {
+.font-hanken-grotesk {
+  font-family: 'Hanken Grotesk', sans-serif 
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  /* ::view-transition-new(root) {
+    animation: reveal 0.5s ease-in-out;
+  }
+
+  @keyframes reveal {
+    from {
+      clip-path: circle(0% at 100% 0%);
+    }
+    to {
+      clip-path: circle(150% at 80% 0%);
+    }
+  } */
+}
+
+:root{
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+}
+
+.dark{
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+}
+
+@theme inline{
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --text-small:  0.9370rem; /* 15px, since 1rem = 16px */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* apply to whole body */
+
+@layer base{
+  body{
+    @apply bg-background text-foreground;
   }
 }
+/* for text which will remain same in dark and root */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-secondary{
+  @apply text-[#909092] dark:text-[#909092];
 }
