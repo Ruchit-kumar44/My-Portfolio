@@ -8,7 +8,7 @@ import ThemeSwitch from "./ThemeSwitch"
 export default function Navbar(){
     return(
     
-      <Container className="sticky top-0 z-20  py-4 backdrop-blur-sm dark:">
+      <Container className="sticky top-0 z-20  py-4 backdrop-blur-sm">
          <div className="flex justify-between items-center text-small font-medium">
             <div className="text-secondary flex items-center justify-between gap-5">
                {NavbarConfig.NavItems.map((item)=>(

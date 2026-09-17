@@ -2,7 +2,8 @@
 
 import { useTheme } from "next-themes"
 import { useState, useEffect, useCallback } from "react"
-import { Sun, Moon } from "lucide-react";
+import Sun from "../svgs/sun"
+import Moon from "../svgs/moon"
 
 
 export default function ThemeSwitch(){
@@ -37,7 +38,7 @@ export default function ThemeSwitch(){
       aria-label="Toggle theme"
       className="cursor-pointer p-2 transition-transform active:scale-90"
      >
-        {isDark? <Sun className="size-4 text-yellow-200"/>: <Moon className="size-4" />}
+        {isDark? <Sun className="size-4"/>: <Moon className="size-4" />}
      </button>
   )
 
