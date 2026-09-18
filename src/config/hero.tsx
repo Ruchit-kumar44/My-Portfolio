@@ -3,7 +3,7 @@ import ExpressJs from "@/components/technologies/ExpressJs"
 import NextJs from "@/components/technologies/NextJs"
 import ReactIcon from "@/components/technologies/ReactIcon"
 import TypeScript from "@/components/technologies/TypeScript"
-import { Component } from "lucide-react"
+
 
 
 
@@ -15,8 +15,8 @@ export const skillComponent = {
 }
 
 export const heroConfig = {
-  name: "Ruchit",
-  title: "A full Stack web developer.",
+  name: "Ruchit thakur",
+  title: "A Backend-focused Full Stack Developer.",
   avatar: "/images/logo.jpg",
 
   // skills configration
@@ -42,7 +42,7 @@ export const heroConfig = {
      Component: 'ExpressJs'
     }
   ],
-  
+
   // Buttons Configuration
   buttons: [
     {
