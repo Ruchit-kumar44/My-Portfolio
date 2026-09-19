@@ -1,4 +1,7 @@
-import LinkedIn from "@/components/svgs/linkedin"
+import Github from "@/components/svgs/Github"
+import LinkedIn from "@/components/svgs/Linkedin"
+import Mail from "@/components/svgs/Mail"
+import X from "@/components/svgs/X"
 import Bun from "@/components/technologies/Bun"
 import ExpressJs from "@/components/technologies/ExpressJs"
 import NextJs from "@/components/technologies/NextJs"
@@ -36,7 +39,7 @@ export const heroConfig = {
     {
       variant: 'default',
       text: 'Get in touch',
-      href: '/contact',
+      href: '/contacts',
       icon: 'Chat',
     },
   ],
@@ -44,23 +47,23 @@ export const heroConfig = {
 
 export const socialLnks = [
     {
-      name: "twitter",
+      name: "Linkedin",
       href: 'https://x.com/ramxcodes',
-      icon: <LinkedIn/>
+      icon: <LinkedIn className="text-secondary hover:text-[#0A66C2] transition-colors" />
     },
     {
-      name: "linkedin",
+      name: "X",
       href: 'https://x.com/ramxcodes',
-      icon: <LinkedIn/>
+      icon: <X/>
     },
     {
-      name: "github",
+      name: "Github",
       href: 'https://x.com/ramxcodes',
-      icon: <LinkedIn/>
+      icon: <Github/>
     },
     {
-      name: "mail",
+      name: "Mail",
       href: 'https://x.com/ramxcodes',
-      icon: <LinkedIn/>
+      icon: <Mail/>
     }
 ]

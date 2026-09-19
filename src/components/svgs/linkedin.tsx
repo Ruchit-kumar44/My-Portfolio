@@ -1,6 +1,8 @@
-export default function LinkedIn() {
+
+export default function LinkedIn({ className }: { className?: string }) {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
       viewBox="0 0 256 256"

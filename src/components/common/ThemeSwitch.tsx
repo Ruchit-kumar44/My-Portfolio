@@ -2,8 +2,8 @@
 
 import { useTheme } from "next-themes"
 import { useState, useEffect, useCallback } from "react"
-import Sun from "../svgs/sun"
-import Moon from "../svgs/moon"
+import Sun from "../svgs/Sun"
+import Moon from "../svgs/Moon"
 
 
 export default function ThemeSwitch(){

@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/common/ThemeProvider"
 import Footer from "@/components/common/Footer";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { TooltipProvider } from "../components/ui/tooltip";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -26,7 +27,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         disableTransitionOnChange
         >
         <Navbar></Navbar>
+        <TooltipProvider>
         {children}
+        </TooltipProvider>
         <Footer></Footer>
        </ThemeProvider>
       </body>
