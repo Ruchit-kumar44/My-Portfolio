@@ -1,6 +1,17 @@
 import Image from "next/image";
 import { heroConfig, socialLnks} from "@/config/Hero";
 import { Button } from "../ui/button";
+import CV from "../svgs/Cv";
+import Chat from "../svgs/Chat";
+import Link from 'next/link'
+import { cn } from "cn";
+
+
+
+const buttonIcons = {
+  CV: CV,
+  Chat: Chat,
+};
 
 export default function HeroSection(){
     const {name, title, avatar, buttons} = heroConfig
@@ -20,8 +31,29 @@ export default function HeroSection(){
             </div>
         </div>
        <div className="mt-4 text-small font-medium text-secondary">Love building solid backends, breaking them, then building better ones.</div>
+<div className="mt-8 flex gap-4">
+  {buttons.map((button, index) => {
+    const IconComponent =
+      buttonIcons[button.icon as keyof typeof buttonIcons];
 
-       <div></div>
+    return (
+      <Button
+        key={index}
+        asChild
+        variant={button.variant as 'outline' | 'default'}
+        className={cn(
+          button.variant === 'outline' && 'inset-shadow-indigo-500',
+          button.variant === 'default' && 'inset-shadow-indigo-500'
+        )}
+      >
+        <Link href={button.href}>
+          {IconComponent && <IconComponent />}
+          {button.text}
+        </Link>
+      </Button>
+    );
+  })}
+</div>
       </div>
       
     )
