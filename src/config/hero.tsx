@@ -1,17 +1,22 @@
 import LinkedIn from "@/components/svgs/linkedin"
+import Bun from "@/components/technologies/Bun"
 import ExpressJs from "@/components/technologies/ExpressJs"
 import NextJs from "@/components/technologies/NextJs"
+import PostgreSQL from "@/components/technologies/PostgreSQL"
 import ReactIcon from "@/components/technologies/ReactIcon"
 import TypeScript from "@/components/technologies/TypeScript"
 
 
 
 
-export const skillComponent = {
+export const skillComponents = {
   TypeScript: TypeScript,
   ReactIcon: ReactIcon,
   NextJs:    NextJs,
-  ExpressJs: ExpressJs
+  ExpressJs: ExpressJs,
+  PostgreSQL: PostgreSQL,
+  Bun:        Bun
+
 }
 
 export const heroConfig = {
@@ -19,30 +24,7 @@ export const heroConfig = {
   title: "A Backend-focused Full Stack Developer.",
   avatar: "/images/logo.jpg",
 
-  // skills configration
-  skills: [
-    {
-      name: 'TypeScript',
-      href: "https://typescript.dev/",
-      Component: 'TypeScript'
-    },
-    {
-     name: 'React',
-     href: "https://react.dev/",
-     Component: 'ReactIcon'
-    },
-    {
-     name: 'NextJs',
-     href: "https://react.dev/",
-     Component: 'NextJs'
-    },
-    {
-     name: 'ExpressJs',
-     href: "https://react.dev/",
-     Component: 'ExpressJs'
-    }
-  ],
-
+ 
   // Buttons Configuration
   buttons: [
     {
