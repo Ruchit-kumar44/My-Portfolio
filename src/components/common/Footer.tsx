@@ -26,9 +26,9 @@ export default function Footer(){
                              key={link.name}
                              variant={"outline"}
                              asChild
-                             className="bg-background h-10 w-10 hover:bg-[#F5F5F5] dark:hover:bg-[#262626]"
+                             className="bg-background h-10 w-10 hover:bg-[#F5F5F5] dark:hover:text-white dark:hover:bg-[#262626]"
                             >
-                                <Link href={link.href}><span className="dark:text-white flex items-center">{link.icon}</span></Link>
+                                <Link href={link.href}><span className="flex items-center">{link.icon}</span></Link>
                             </Button>
                         ))}
                     </div>
