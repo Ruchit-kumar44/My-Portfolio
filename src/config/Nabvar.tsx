@@ -1,4 +1,4 @@
-import { Navlink } from "@/types"
+import { Navlink } from "@/types/Navbar"
 
 export const NavbarConfig = {
     NavItems: [
