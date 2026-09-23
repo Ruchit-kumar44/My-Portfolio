@@ -1,5 +1,5 @@
 export interface Project {
-    name : string;
+    title : string;
     description: string;
     video?: string;
     image: string;
@@ -8,7 +8,6 @@ export interface Project {
     live : string;
     technologies: {name: string; icon : React.ReactNode}[]
     details: boolean
-    projectDetailsPageSlug: string;
     isWorking: boolean
 }
 
