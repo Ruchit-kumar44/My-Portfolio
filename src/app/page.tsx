@@ -2,7 +2,7 @@ import Container from "@/components/common/Container";
 import Blog from "@/components/landing/Blog";
 import GithubSection from "@/components/landing/Github";
 import Hero from "@/components/landing/Hero";
-import ProjectsSection from "@/components/landing/Projects";
+import Projects from "@/components/landing/Projects";
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <Container>
         <Hero></Hero>
-        <ProjectsSection></ProjectsSection>
+        <Projects></Projects>
         <Blog></Blog>
         <GithubSection></GithubSection>
       </Container>

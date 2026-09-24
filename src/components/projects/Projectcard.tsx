@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: ProjectcardProps) {
   const [dialogOpen, setdialogOpen] = useState<boolean>(false);
 
   return (
-    <Card className="group h-full w-full overflow-hidden border-gray-100 p-0 shadow-none transition-all dark:border-gray-800">
+    <Card className="group  overflow-hidden p-0 shadow-none transition-all">
       <CardHeader className="p-0">
         <div className="group relative aspect-video overflow-hidden">
           <Image
