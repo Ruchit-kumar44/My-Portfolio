@@ -22,7 +22,7 @@ interface ProjectcardProps {
   project: Project;
 }
 
-export default function projectCard({ project }: ProjectcardProps) {
+export default function ProjectCard({ project }: ProjectcardProps) {
   const [dialogOpen, setdialogOpen] = useState<boolean>(false);
 
   return (
