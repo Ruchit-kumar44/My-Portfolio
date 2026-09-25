@@ -46,7 +46,7 @@ export const pageMetadata: Record<string, PageMeta> = {
       'web development',
       'projects',
     ],
-    ogImage: '/meta/hero.png',
+    ogImage: '/meta/opengraph-image.png',
     twitterCard: 'summary_large_image',
   },
 

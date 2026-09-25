@@ -1,10 +1,26 @@
-import Container from "@/components/common/Container"
+import Container from "@/components/common/Container";
+import { generateMetadata as getMetadata } from "@/config/Meta";
+import { Metadata } from "next";
 
-export default function Projects(){
-    return(
-          <Container className="py-16">
-                <div>this is project page</div>
-              </Container>
-        
-    )
+export const metadata: Metadata = {
+  ...getMetadata("/blogs"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export default function Projects() {
+  return (
+    <Container className="py-16">
+      <div>this is project page</div>
+    </Container>
+  );
 }

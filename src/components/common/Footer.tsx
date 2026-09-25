@@ -2,14 +2,14 @@ import Link from "next/link";
 import Container from "./Container";
 import { FooterConfig, footerSocialLinks, PageLinks } from "@/config/Footer";
 import { Button } from "../ui/button";
-import { cn } from '@/lib/utils';
+import { Separator } from "../ui/separator";
 
 export default function Footer(){
 
     return(
         <div className="w-full min-h-70 border-t border-#909092 bg-[#F7F7F7] dark:bg-[#161515]">
           <Container className="text-secondary text-small">
-             <div className="w-full flex justify-between items-center py-10 border-b border-#909092">
+             <div className="w-full flex justify-between items-center py-10">
                 <div className="max-w-55">
                     <p className="pb-3 font-medium">NAVIGATE</p>
                     <div className="font-medium font-[#4D4C4D] w-full flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -34,6 +34,7 @@ export default function Footer(){
                     </div>
                 </div>
              </div>
+             <Separator/>
              <div className="py-8 flex items-center">
                  &copy;{' '} {new Date().getFullYear()} {FooterConfig.name}  {FooterConfig.copyright}
              </div>

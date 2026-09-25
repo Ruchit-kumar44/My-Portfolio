@@ -3,7 +3,7 @@ import { generateMetadata as getMetadata } from "@/config/Meta";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  ...getMetadata('/reusme'),
+  ...getMetadata('/resume'),
   robots: {
     index: true,
     follow: true,
