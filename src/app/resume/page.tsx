@@ -1,4 +1,5 @@
 import Container from "@/components/common/Container";
+import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { generateMetadata as getMetadata } from "@/config/Meta";
 import { Metadata } from "next";
@@ -27,7 +28,7 @@ export default function ResumePage() {
             <p className="text-secondary font text-[16px]">View and download my professional Resume</p>
           </div>
           <Separator />
-          <div className="max-full">
+          <div className="max-full overflow-hidden py-0 border rounded-[8px] border-#909092">
             <iframe 
             src="https://drive.google.com/file/d/1ormIiMVpWGAMOZ3FZVj_XrKPkEmPlPQj/preview" 
             className="w-full min-h-screen"
