@@ -27,7 +27,7 @@ export const projects: Project[] = [
      isWorking: true,
    },
    {
-     title: "Notesbuddy",
+     title: "Notebuddy",
      description:
         'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
      link: 'https://notesbuddy.in',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
      isWorking: true,
    },
    {
-     title: "Notesbuddy",
+     title: "Notesbaddy",
      description:
         'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
      link: 'https://notesbuddy.in',
@@ -65,7 +65,7 @@ export const projects: Project[] = [
      isWorking: false
    },
    {
-     title: "Notesbuddy",
+     title: "Notesbudy",
      description:
         'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
      link: 'https://notesbuddy.in',

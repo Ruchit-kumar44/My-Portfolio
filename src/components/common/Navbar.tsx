@@ -12,7 +12,7 @@ export default function Navbar(){
          <div className="flex justify-between items-center text-small font-bold">
             <div className="text-secondary flex items-center justify-between gap-5">
                {NavbarConfig.NavItems.map((item)=>(
-                   <Link href={item.href} key={item.label}>{item.label}</Link>
+                   <Link className="transition-all duration-300 hover:text-black dark:hover:text-white" href={item.href} key={item.label}>{item.label}</Link>
               ))}
            </div>
            <div className="flex items-center">

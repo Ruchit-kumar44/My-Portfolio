@@ -14,11 +14,11 @@ export default function Footer(){
                     <p className="pb-3 font-medium">NAVIGATE</p>
                     <div className="font-medium font-[#4D4C4D] w-full flex flex-wrap items-center gap-x-4 gap-y-1">
                        {PageLinks.map((page)=>(
-                         <Link key={page.label} href={page.href}>{page.label}</Link>
+                         <Link className="transition-colors duration-300 hover:text-black dark:hover:text-white" key={page.label} href={page.href}>{page.label}</Link>
                        ))}
                     </div>
                 </div>
-                <div className="w-full lg:max-w-40">
+                <div className="w-full md:max-w-40">
                     <p className="pb-3 font-medium">CONNECT</p>
                     <div className="flex items-center flex-wrap gap-x-3 gap-y-2">
                         {footerSocialLinks.map((link)=>(
@@ -26,7 +26,7 @@ export default function Footer(){
                              key={link.name}
                              variant={"outline"}
                              asChild
-                             className="bg-background h-10 w-10 hover:bg-[#F5F5F5] dark:hover:text-white dark:hover:bg-[#262626]"
+                             className="bg-background h-10 w-10"
                             >
                                 <Link href={link.href}><span className="flex items-center">{link.icon}</span></Link>
                             </Button>
