@@ -12,8 +12,7 @@ import { useState } from "react";
 import Image from "next/image";
 import PlayCircle from "../svgs/PlayCircle";
 import Link from "next/link";
-import { Tooltip, TooltipContent } from "radix-ui/tooltip";
-import { TooltipTrigger } from "../ui/tooltip";
+import { TooltipTrigger, Tooltip, TooltipContent } from "../ui/tooltip";
 import Website from "../svgs/Website";
 import Github from "../svgs/Github";
 import ArrowRight from "../svgs/ArrowRight";
@@ -93,7 +92,7 @@ export default function ProjectCard({ project }: ProjectcardProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Github />
+                      <Github  />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -111,7 +110,7 @@ export default function ProjectCard({ project }: ProjectcardProps) {
             {project.technologies.map((technology) => (
               <Tooltip key={technology.name}>
                 <TooltipTrigger asChild>
-                  <div className="size-6 transition-all duration-300 hover:scale-110">
+                  <div className="size-5 transition-all duration-300 hover:scale-110">
                     {technology.icon}
                   </div>
                 </TooltipTrigger>

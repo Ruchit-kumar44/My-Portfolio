@@ -39,7 +39,7 @@ export const heroConfig = {
     {
       variant: 'default',
       text: 'Get in touch',
-      href: '/contacts',
+      href: '/contact',
       icon: 'Chat',
     },
   ],
