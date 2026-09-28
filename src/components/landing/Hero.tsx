@@ -16,7 +16,7 @@ const buttonIcons = {
 export default function HeroSection() {
   const { name, title, avatar, buttons } = heroConfig;
   return (
-    <div className="mt-6">
+    <div className="pt-6 bg-red-400">
       <div className="flex gap-5">
         <Image
           alt="hero"

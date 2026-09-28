@@ -1,6 +1,6 @@
 export const contactConfig = {
-    title: 'contact',
-    description: "Get in touch with me. I will get back to you as soon as possible.",
+    title: 'Contact Form',
+    description: "Please contact me directly at naresh.khatri2345(at)gmail.com or drop your info here..",
     form: {
         labels: {
             name: 'Name',

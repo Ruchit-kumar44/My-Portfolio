@@ -1,8 +1,5 @@
-import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { Message } from "radix-ui/form";
 import * as z from "zod";
-import { tr } from "zod/v4/locales";
 
 const ratelimitStore = new Map<string, { count: number; resetTime: number }>();
 
@@ -11,7 +8,7 @@ const RATE_LIMIT_MAX_REQUESTS = 5;
 
 const ContactSchema = z.object({
   name: z.string().min(2).max(100),
-  email: z.email(),
+  email: z.string().email(),
   phone: z.string().max(10).max(20),
   message: z.string().min(10).max(1000),
 });
@@ -132,7 +129,7 @@ async function sendToTelegram(data: {
     }
 }
 
-export async function Post(request: NextRequest){
+export async function POST(request: NextRequest){
     try{
         const clientIP = getclientIP(request);
         const rateLimit = checkRateLimit(clientIP);
@@ -198,5 +195,5 @@ export async function Post(request: NextRequest){
 }
 
 export async function GET() {
-  return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
+  return NextResponse.json({ error: 'Get Method not allowed' }, { status: 405 });
 }

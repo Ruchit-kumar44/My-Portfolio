@@ -8,7 +8,7 @@ import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
 export default function AboutSection(){
     
     return(
-        <div className="py-10">
+        <div className="py-10 bg-gray-800">
             <SectionHeading heading="About" />
             {/* About me */}
             <div className="mt-4 flex flex-col gap-4 md:flex-row">

@@ -7,7 +7,7 @@ import SectionHeading from "../common/SectioHeading";
 
 export default function ProjectsSection(){
     return(
-       <div className="mt-10">
+       <div className="py-10 bg-blue-500">
          <SectionHeading  heading = "Projects" />
          <ProjectList className="" projects={projects.slice(0, 2)} />
           <div className="mt-5 flex justify-center">
