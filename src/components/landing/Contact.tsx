@@ -19,6 +19,11 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { Loader2, Send } from "lucide-react";
 
+//to show heading as optional 
+interface contactHeading {
+  show?: boolean
+}
+
 const contactFormShecma = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
@@ -111,7 +116,7 @@ export default function ContactSection() {
         <CardContent>
             <form onSubmit={Form.handleSubmit(onSubmit)}>
               <FieldGroup>
-                  <div className="grid grid-cols-1 gp-6 sm:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                       <Controller
                          name="name"
                          control={Form.control}

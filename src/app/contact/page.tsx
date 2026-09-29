@@ -1,6 +1,7 @@
 import Container from "@/components/common/Container";
 import { Metadata } from "next";
 import { generateMetadata as getMetadata } from "@/config/Meta";
+import ContactSection from "@/components/landing/Contact";
 
 export const metadata: Metadata = {
   ...getMetadata('/contact'),
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
 export default function Contacts(){
 
     return(
-       <Container>
-         <div>contact me using this email</div>
-       </Container>
+      <Container>
+         <ContactSection />
+      </Container>
     )
 }
