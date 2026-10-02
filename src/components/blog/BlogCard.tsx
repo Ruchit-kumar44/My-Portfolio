@@ -1,64 +1,53 @@
-import { BlogPostPreview } from "@/types/Blog";
-import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import Link from "next/link";
-import Image from "next/image";
-import { Badge } from "../ui/badge";
-import Calender from "../svgs/Calender";
-import ArrowRight from "../svgs/ArrowRight";
+import { BlogPostPreview } from "@/types/Blog"
+import Link from "next/link"
+import ArrowRight from "../svgs/ArrowRight"
+import { Badge } from "../ui/badge"
+import Calender from "../svgs/Calender"
 
 interface BlogCardProps {
   post: BlogPostPreview
 }
 
-export default function BlogCard({post}: BlogCardProps){
-    const {slug, frontmatter} = post;
-    const { title, description, image, tags, date } = frontmatter;
+export default function BlogCard2({ post }: BlogCardProps) {
+  const { slug, frontmatter } = post
+  const { title, description, tags, date } = frontmatter
 
-    const formatDate = new Date(date).toLocaleString('en-US', {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    })
+  const formattedDate = new Date(date).toLocaleString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
 
-    return (
-        <Card className="group h-full w-full overflow-hidden border-gray-100 p-0 shadow-none transition-all dark:border-gray-800">
-           <CardHeader className="p-0">
-             <div className="relative aspect-video overflow-hidden">
-                <Link href={`/blog/${slug}`}>
-                   <Image src={image} alt={title} fill className="object-cover" />
-                </Link>
-             </div>
-           </CardHeader>
-           <CardContent>
-             <div className="sapce-y-3">
-                   <h3 className="group-hover:text-primary line-clamp-2 text-xl leading-tight font-semibold">
-                       {title}
-                   </h3>
-                   <p className="text-secondary mt-4 line-clamp-3">{description}</p>
-             </div>
-           </CardContent>
-           <CardFooter className="p-6 pt-0">
-            <div className="flex w-full flex-col space-y-3">
-             <div className="flex flex-wrap gap-2">
-                {tags.slice(0, 3).map((tag)=>(
-                    <Badge key={tag} variant='secondary' className="text-xs">
-                        {tag}
-                    </Badge>
-                ))}
-                {tags.length > 3 && (
-                    <Badge variant="outline" className="text-xs">
-                       +{tags.length - 3} more
-                   </Badge>
-               )}
-             </div>
-             <div className="mt-4 flex items-center justify-between gap-2">
-               <time className="text-secondary flex items-center gap-2 text-sm" dateTime={date}>
-                  <Calender className="size-4"/> {formatDate}
-               </time>
-               read more <ArrowRight className="size-4" />
-             </div>
-            </div>
-           </CardFooter>
-        </Card>
-    );
+  return (
+    <Link className="group flex justify-between items-center w-full py-4" href={`/blogs/${slug}`}>
+        <div>
+              <h3 className="text-foreground text-[18px] font-bold">
+        {title}
+      </h3>
+      <p className="text-secondary text-sm font-medium mt-1">{description}</p>
+
+      <div className="py-1 text-secondary w-full flex flex-wrap justify-between items-center gap-2">
+        <div className="flex flex-wrap gap-2">
+          {tags.slice(0, 3).map((tag) => (
+            <Badge key={tag} variant="secondary" className="text-xs text-secondary rounded-sm">
+              {tag}
+            </Badge>
+          ))}
+          {tags.length > 3 && (
+            <Badge variant="outline" className="text-xs rounded-sm">
+              +{tags.length - 3} more
+            </Badge>
+          )}
+        </div>
+      </div>
+
+      <time className="text-secondary flex items-center gap-2 text-xs" dateTime={date}>
+        <Calender className="size-4" /> {formattedDate}
+      </time>
+        </div>
+       <p className="flex text-secondary items-center gap-1 text-sm font-medium">
+          read more <ArrowRight className="size-4" />
+        </p>
+    </Link>
+  )
 }

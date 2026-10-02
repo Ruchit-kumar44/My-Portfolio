@@ -1,0 +1,48 @@
+---
+title: "How to Learn Next.js Data Fetching"
+description: "A practical path through Server Components, caching, and the fetch patterns"
+image: "/blog/blog1.png"
+tags: ["nextjs", "data-fetching"]
+date: "2026-09-25"
+isPublished: true
+---
+
+# How to Learn Next.js Data Fetching
+
+Data fetching in the App Router confuses a lot of people coming from the Pages Router, mostly because the mental model actually changed, not just the syntax. Here's the order I'd learn it in.
+
+## Start with Server Components
+
+Before touching `fetch`, understand that components in `app/` are Server Components by default. That means they can be `async` and can call `fetch` directly in the component body, with no `useEffect`, no loading state, no client-side request at all.
+
+```tsx
+export default async function Page() {
+  const res = await fetch("https://api.example.com/data")
+  const data = await res.json()
+  return <div>{data.title}</div>
+}
+```
+
+This single idea — a component that just waits for its own data before rendering — replaces most of what `useEffect` + `useState` used to do for data fetching.
+
+## Then learn caching
+
+Next.js extends the native `fetch` with its own caching behavior. Three options matter most:
+
+- `{ cache: "force-cache" }` — cache indefinitely (the default for most fetches)
+- `{ cache: "no-store" }` — never cache, always fetch fresh
+- `{ next: { revalidate: 60 } }` — cache for 60 seconds, then refetch
+
+Picking the wrong one is the most common data-fetching bug in App Router apps — either showing stale data forever, or hammering an API on every request when caching would have been fine.
+
+## Then learn when you actually need a Client Component
+
+Only reach for `"use client"` plus `useEffect`/`useState` when data depends on something that only exists in the browser — a click, a scroll position, user input. If the data is known at request time and doesn't depend on interaction, it belongs in a Server Component.
+
+## What I'd skip for now
+
+Don't start with `generateStaticParams`, parallel routes, or streaming with `Suspense`. They matter, but they're optimizations on top of the basic fetch-in-a-Server-Component pattern — learn that first, solidly, before adding more.
+
+## Takeaway
+
+Most Next.js data-fetching confusion comes from applying old Pages Router habits (`getServerSideProps`, `useEffect` fetches) to the App Router's model. Once you accept that a

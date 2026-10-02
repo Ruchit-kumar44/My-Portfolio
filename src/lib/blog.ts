@@ -6,10 +6,10 @@ import matter from "gray-matter";
 
 
 
-const blogDirectory = path.join(process.cwd(), 'src/data/blog');
+const blogDirectory = path.join(process.cwd(), 'src/data/blogs');
 
 // get all blog files from the blog directory
-export function getBlogPostsSlug(): string[]{
+export function getBlogPostsSlugs(): string[]{
    if(!fs.existsSync(blogDirectory)){
     return []
    }
@@ -54,7 +54,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null{
  */
 
 export function getAllBlogPosts(): BlogPostPreview[]{
-    const slugs = getBlogPostsSlug();
+    const slugs = getBlogPostsSlugs();
 
     const posts = slugs.map((slug)=>{
         const post = getBlogPostBySlug(slug);

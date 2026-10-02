@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <Container className="py-12">
-        <div className="space-y-12">
+        <div className="space-y-10">
           <div>
             <h1 className="font-bold tracking-tight text-2xl">Resume</h1>
             <p className="text-secondary font text-[16px]">View and download my professional Resume</p>

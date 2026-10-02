@@ -1,6 +1,10 @@
+import { BlogList } from "@/components/blog/BlogList";
 import Container from "@/components/common/Container";
+import { Separator } from "@/components/ui/separator";
 import { generateMetadata as getMetadata } from "@/config/Meta";
+import { getPublishedBlogPosts } from "@/lib/blog";
 import { Metadata } from "next";
+
 
 export const metadata: Metadata = {
   ...getMetadata("/blogs"),
@@ -17,10 +21,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Projects() {
+export default function BlogPage() {
+  const posts = getPublishedBlogPosts()
   return (
-    <Container className="py-16">
-      <div>this is project page</div>
+    <Container className="py-12">
+      <div className="space-y-10">
+       <div className="">
+         <h1 className="font-bold tracking-tight text-2xl">
+            Blogs
+          </h1>
+          <p className="text-secondary text-[16px]">
+           Thoughts, tutorials, and insights on engineering and programming.
+          </p>
+       </div>
+       <Separator/>
+       <BlogList posts={posts} />
+      </div>
     </Container>
   );
 }
