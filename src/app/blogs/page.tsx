@@ -25,7 +25,7 @@ export default function BlogPage() {
   const posts = getPublishedBlogPosts()
   return (
     <Container className="py-12">
-      <div className="space-y-10">
+      <div className="space-y-8">
        <div className="">
          <h1 className="font-bold tracking-tight text-2xl">
             Blogs
@@ -35,7 +35,7 @@ export default function BlogPage() {
           </p>
        </div>
        <Separator/>
-       <BlogList posts={posts} />
+       <BlogList showTags={true} posts={posts} />
       </div>
     </Container>
   );

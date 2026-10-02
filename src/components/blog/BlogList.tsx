@@ -2,11 +2,12 @@ import { BlogPostPreview } from "@/types/Blog"
 import BlogCard from "./BlogCard"
 
 interface BlogListProps {
-  posts: BlogPostPreview[]
+  posts: BlogPostPreview[],
+  showTags: boolean,
   className?: string
 }
 // BlogList.tsx
-export function BlogList({ posts, className = "" }: BlogListProps) {
+export function BlogList({ posts, showTags = true, className = "" }: BlogListProps) {
   if (posts.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -19,7 +20,7 @@ export function BlogList({ posts, className = "" }: BlogListProps) {
   return (
     <div className={`flex flex-col ${className}`}>
       {posts.map((post) => (
-        <BlogCard key={post.slug} post={post} />
+        <BlogCard showTags={showTags} key={post.slug} post={post} />
       ))}
     </div>
   )

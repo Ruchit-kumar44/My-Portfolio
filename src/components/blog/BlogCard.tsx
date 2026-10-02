@@ -6,9 +6,10 @@ import Calender from "../svgs/Calender"
 
 interface BlogCardProps {
   post: BlogPostPreview
+  showTags: boolean
 }
 
-export default function BlogCard2({ post }: BlogCardProps) {
+export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
   const { slug, frontmatter } = post
   const { title, description, tags, date } = frontmatter
 
@@ -27,7 +28,8 @@ export default function BlogCard2({ post }: BlogCardProps) {
       <p className="text-secondary text-sm font-medium mt-1">{description}</p>
 
       <div className="py-1 text-secondary w-full flex flex-wrap justify-between items-center gap-2">
-        <div className="flex flex-wrap gap-2">
+        {showTags &&
+          <div className="flex flex-wrap gap-2">
           {tags.slice(0, 3).map((tag) => (
             <Badge key={tag} variant="secondary" className="text-xs text-secondary rounded-sm">
               {tag}
@@ -39,6 +41,7 @@ export default function BlogCard2({ post }: BlogCardProps) {
             </Badge>
           )}
         </div>
+        }
       </div>
 
       <time className="text-secondary flex items-center gap-2 text-xs" dateTime={date}>
