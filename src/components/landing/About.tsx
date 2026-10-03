@@ -2,39 +2,22 @@ import Image from "next/image";
 import SectionHeading from "../common/SectioHeading";
 import { About, MySkill } from "@/config/About";
 import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
+import { Separator } from "../ui/separator";
 
 
 
 export default function AboutSection(){
     
     return(
-        <div className="py-10 bg-gray-800">
-            <SectionHeading heading="About" />
-            {/* About me */}
+        <div className="pb-10">
+            <SectionHeading heading="This is me" clasName="mb-2" />
+            {/* <h4 className="text-secondary text-small">this is me</h4> */}
+            <Separator />
             <div className="mt-4 flex flex-col gap-4 md:flex-row">
-              <Image
-                src='/images/logo.jpg'
-                width={100}
-                height={100}
-                alt="About"
-                className="border-secondary size-55  rounded-md border-2 bg-blue-300 dark:bg-yellow-300"
-              />
+                <h1 className="text-4xl font-light w-200">Hi, I'm Rachit</h1>
               <div>
-                <h3 className="text-2xl font-bold">{About.name}</h3>
-                <p className="text-secondary mt-2">{About.about}</p>
-                <p className="text-secondary mt-8 font-bold">Skills</p>
-                <div className="flex mt-3  flex-wrap gap-2">
-                    {MySkill.map((skill)=>(
-                        <Tooltip key={skill.key} delayDuration={0}>
-                            <TooltipTrigger asChild>
-                               <div className="mt-5 transition-all duration-300 hover:scale-110 size-6 hover:cursor-pointer">
-                                   {skill}
-                                </div>
-                            </TooltipTrigger>
-                            <TooltipContent>{skill.key}</TooltipContent>
-                        </Tooltip>
-                    ))}
-                </div>
+                <p className="text-secondary  font-medium">I'm a frontend web developer  to turning ideas into creative. I specialize in creating seamless and intuitive user experiences.</p>
+                <p className="text-secondary  font-medium mt-5">I'm a frontend web developer  to turning ideas into creative. I specialize in creating seamless and intuitive user experiences.</p>
               </div>
             </div>
         </div>

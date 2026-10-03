@@ -184,3 +184,29 @@ html.dark {
   inset 0 1px 4px rgba(255, 255, 255, 0.03);
 }
 
+/* Blog font size controls */
+.prose {
+  font-size: var(--blog-font-size);
+}
+
+.prose p,
+.prose li,
+.prose blockquote {
+  font-size: var(--blog-font-size);
+}
+
+.prose h1 {
+  font-size: calc(var(--blog-font-size) * 2.25);
+}
+
+.prose h2 {
+  font-size: calc(var(--blog-font-size) * 1.875);
+}
+
+.prose h3 {
+  font-size: calc(var(--blog-font-size) * 1.5);
+}
+
+.prose h4 {
+  font-size: calc(var(--blog-font-size) * 1.25);
+}

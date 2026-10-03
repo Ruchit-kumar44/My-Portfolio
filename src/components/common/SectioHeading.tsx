@@ -1,12 +1,15 @@
+import {cn} from '@/lib/utils'
 
 interface SectioHeadingprops{
-    heading: string
+    heading: string;
+    clasName?: string;
+    h2Style?: string
 }
-export default function SectionHeading({heading}: SectioHeadingprops){
+export default function SectionHeading({heading, clasName, h2Style}: SectioHeadingprops){
 
     return(
-        <div className="mb-4">
-            <h2 className="text-2xl font-bold">{heading}</h2>
+        <div className={cn("mb-4", clasName)}>
+            <h2 className={cn("text-2xl font-bold", h2Style)}>{heading}</h2>
         </div>
     )
 }
