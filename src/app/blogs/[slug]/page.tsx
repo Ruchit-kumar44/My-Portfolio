@@ -1,17 +1,55 @@
-import { notFound } from "next/navigation"
-import { MDXRemote } from "next-mdx-remote/rsc"
-import Image from "next/image"
+import { BlogContent } from "@/components/blog/BlogContent"
+import Container from "@/components/common/Container"
+import ArrowLeft from "@/components/svgs/ArrowLeft"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { siteConfig } from "@/config/Meta"
 import { getBlogPostBySlug, getBlogPostsSlugs } from "@/lib/blog"
+import { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 
-export async function generateStaticParams() {
-  return getBlogPostsSlugs().map((slug) => ({ slug }))
+interface BlogPostPageProps {
+  params: Promise<{ slug: string }>
 }
 
-export default async function BlogPostPage({
+export async function generateStaticParams() {
+  const slugs = getBlogPostsSlugs()
+  return slugs.map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+}: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
+
+  if (!post || !post.frontmatter.isPublished) {
+    return { title: "Post Not Found" }
+  }
+
+  const { title, description, image } = post.frontmatter
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  }
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 
@@ -19,29 +57,27 @@ export default async function BlogPostPage({
     notFound()
   }
 
-  const { title, description, image, date, tags } = post.frontmatter
-
   return (
-    <div className="max-w-3xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold mb-2">{title}</h1>
-      <p className="text-secondary mb-2">{description}</p>
-      <p className="text-secondary text-sm mb-8">
-        {new Date(date).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
-        {" · "}
-        {tags.join(", ")}
-      </p>
+    <Container className="py-16">
+      <div className="space-y-12">
+        <div>
+          <Button variant="ghost" asChild className="group">
+            <Link href="/blogs" className="flex items-center space-x-2">
+              <ArrowLeft className="size-4" />
+              <span>Back to Blog</span>
+            </Link>
+          </Button>
+        </div>
 
-      <div className="relative aspect-video mb-8 rounded-lg overflow-hidden">
-        <Image src={image} alt={title} fill className="object-cover" />
-      </div>
+        <BlogContent frontmatter={post.frontmatter} content={post.content} />
 
-      <div className="prose dark:prose-invert max-w-none">
-        <MDXRemote source={post.content} />
+        <div className="text-center">
+          <Separator className="mb-8" />
+          <Button asChild size="lg">
+            <Link href="/blogs">View All Blogs</Link>
+          </Button>
+        </div>
       </div>
-    </div>
+    </Container>
   )
 }
