@@ -10,7 +10,7 @@ export const projects: Project[] = [
    {
      title: "Notesbuddy",
      description:
-        'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
+        'A comprehensive study platform with notes, flashcards,  AI chatbot, interactive learning tools',
      link: 'https://notesbuddy.in',
      image: '/project/notesbuddy.png',
      technologies: [

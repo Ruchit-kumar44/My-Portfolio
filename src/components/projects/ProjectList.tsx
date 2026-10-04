@@ -1,5 +1,5 @@
 import { Project } from "@/types/Project";
-import ProjectCard from "./Projectcard";
+import ProjectCard from "./ProjectCard";
 
 
 interface ProjectListprops {
@@ -17,7 +17,7 @@ export default function ProjectList({projects, className}: ProjectListprops){
    }
 
    return(
-    <div className={`grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 ${className}`}>
+    <div className={`${className}`}>
        {
         projects.map((project: Project)=>(
             <ProjectCard key={project.title} project={project}></ProjectCard>
