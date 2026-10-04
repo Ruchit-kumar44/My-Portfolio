@@ -85,62 +85,62 @@ export function getPublishedBlogPosts(): BlogPostPreview[]{
     return allPosts.filter((post)=> post.frontmatter.isPublished);
 }
 
-/**
- * Get blog posts by tag
- */
-export function getBlogPostByTag(tag: string): BlogPostPreview[]{
-    const publishedBlogPosts = getPublishedBlogPosts();
-    return publishedBlogPosts.filter((post) =>
-        post.frontmatter.tags.some(
-            (postTag)=> postTag.toLowerCase() === tag.toLowerCase()
-        ),
-    );
-}
+// /**
+//  * Get blog posts by tag
+//  */
+// export function getBlogPostByTag(tag: string): BlogPostPreview[]{
+//     const publishedBlogPosts = getPublishedBlogPosts();
+//     return publishedBlogPosts.filter((post) =>
+//         post.frontmatter.tags.some(
+//             (postTag)=> postTag.toLowerCase() === tag.toLowerCase()
+//         ),
+//     );
+// }
 
-/**
- * Get all unique tags from published posts
- */
-export function getAllTags(): string[]{
-    const publishedPosts = getPublishedBlogPosts();
-    const tagsSet = new Set<string>();
+// /**
+//  * Get all unique tags from published posts
+//  */
+// export function getAllTags(): string[]{
+//     const publishedPosts = getPublishedBlogPosts();
+//     const tagsSet = new Set<string>();
    
-    publishedPosts.forEach((post)=>{
-        post.frontmatter.tags.forEach((tag)=>{
-            tagsSet.add(tag.toLowerCase());
-        });
-    });
+//     publishedPosts.forEach((post)=>{
+//         post.frontmatter.tags.forEach((tag)=>{
+//             tagsSet.add(tag.toLowerCase());
+//         });
+//     });
 
-    return Array.from(tagsSet).sort();
-}
+//     return Array.from(tagsSet).sort();
+// }
 
-/**
- * Get related posts based on tags (excluding the current post)
- */
-export async function getRelatedPosts(currentSlug: string, maxPosts: 3): Promise<BlogPostPreview[]>{
-    const currentPost = await getBlogPostBySlug(currentSlug);
-    if(!currentPost || !currentPost.frontmatter.isPublished){
-        return [];
-    }
+// /**
+//  * Get related posts based on tags (excluding the current post)
+//  */
+// export async function getRelatedPosts(currentSlug: string, maxPosts: 3): Promise<BlogPostPreview[]>{
+//     const currentPost = await getBlogPostBySlug(currentSlug);
+//     if(!currentPost || !currentPost.frontmatter.isPublished){
+//         return [];
+//     }
 
-    const allPosts = getPublishedBlogPosts();
-    const currentTags = currentPost.frontmatter.tags.map((tag)=>
-        tag.toLowerCase()
-     )
+//     const allPosts = getPublishedBlogPosts();
+//     const currentTags = currentPost.frontmatter.tags.map((tag)=>
+//         tag.toLowerCase()
+//      )
 
-    // Calculate relevance score based on shared tags
-     const postsWithScore = allPosts
-    .filter((post) => post.slug !== currentSlug)
-    .map((post) => {
-      const sharedTags = post.frontmatter.tags.filter((tag) =>
-        currentTags.includes(tag.toLowerCase()),
-      );
-      return {
-        post,
-        score: sharedTags.length,
-      };
-    })
-    .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score);
+//     // Calculate relevance score based on shared tags
+//      const postsWithScore = allPosts
+//     .filter((post) => post.slug !== currentSlug)
+//     .map((post) => {
+//       const sharedTags = post.frontmatter.tags.filter((tag) =>
+//         currentTags.includes(tag.toLowerCase()),
+//       );
+//       return {
+//         post,
+//         score: sharedTags.length,
+//       };
+//     })
+//     .filter((item) => item.score > 0)
+//     .sort((a, b) => b.score - a.score);
     
-    return postsWithScore.slice(0, maxPosts).map((item) => item.post);
-}
+//     return postsWithScore.slice(0, maxPosts).map((item) => item.post);
+// }
