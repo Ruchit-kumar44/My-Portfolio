@@ -13,10 +13,10 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
 
-export async function generateStaticParams() {
-  const slugs = getBlogPostsSlugs()
-  return slugs.map((slug) => ({ slug }))
-}
+// export async function generateStaticParams() {
+//   const slugs = getBlogPostsSlugs()
+//   return slugs.map((slug) => ({ slug }))
+// }
 
 export async function generateMetadata({
   params,
@@ -48,6 +48,7 @@ export async function generateMetadata({
     },
   }
 }
+
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params

@@ -10,7 +10,7 @@ interface ProjectCardProps{
 export default function ProjectCard({project}: ProjectCardProps){
 
     return (
-        <Link className=" block mt-5 space-y-4" href={project.live}>
+        <Link className=" block mt-5 space-y-4" href={project.projectDetailsPageSlug}>
             <div>
                <h3 className="text-foreground text-[18px] font-bold">{project.title}</h3>
                <p className="text-secondary text-sm font-medium mt-1">{project.description}</p>

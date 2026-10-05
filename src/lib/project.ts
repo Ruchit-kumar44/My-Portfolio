@@ -79,3 +79,10 @@ export function getAllProjectCaseStudies(): ProjectCaseStudyPreview[]{
 
    return caseStudies;
 }
+
+//get project which are published 
+
+export function getPublishedProject(): ProjectCaseStudyPreview[]{
+   const projectCaseStudies = getAllProjectCaseStudies()
+   return projectCaseStudies.filter((projectCaseStudy)=> projectCaseStudy.frontmatter.isPublished);
+}

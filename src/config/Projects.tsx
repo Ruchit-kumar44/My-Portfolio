@@ -23,6 +23,7 @@ export const projects: Project[] = [
      ],
      github: "https://github.com/ramxcodes/notesbuddy",
      live: "https://notesbuddy.in",
+     projectDetailsPageSlug: '/projects/notesbuddy',
      details: true,
      isWorking: true,
    },
@@ -43,6 +44,7 @@ export const projects: Project[] = [
      github: "https://github.com/ramxcodes/notesbuddy",
      live: "https://notesbuddy.in",
      details: true,
+     projectDetailsPageSlug: '/projects/notesbuddy',
      isWorking: true,
    },
    {
@@ -61,6 +63,7 @@ export const projects: Project[] = [
      ],
      github: "https://github.com/ramxcodes/notesbuddy",
      live: "https://notesbuddy.in",
+     projectDetailsPageSlug: '/projects/notesbuddy',
      details: true,
      isWorking: false
    },
@@ -80,6 +83,7 @@ export const projects: Project[] = [
      ],
      github: "https://github.com/ramxcodes/notesbuddy",
      live: "https://notesbuddy.in",
+     projectDetailsPageSlug: '/projects/notesbuddy',
      details: true,
      isWorking: true,
    },

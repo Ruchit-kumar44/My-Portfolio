@@ -6,6 +6,7 @@ export interface Project {
     github?: string;
     link?: string;
     live: string;
+    projectDetailsPageSlug: string;
     technologies: {name: string; icon : React.ReactNode}[]
     details?: boolean
     isWorking?: boolean
