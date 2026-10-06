@@ -3,6 +3,7 @@ import AboutSection from "@/components/landing/About";
 import Blog from "@/components/landing/Blog";
 import ContactSection from "@/components/landing/Contact";
 import Hero from "@/components/landing/Hero";
+import HeroPage2 from "@/components/landing/Hero2";
 import Projects from "@/components/landing/Projects";
 import { getPublishedBlogPosts } from "@/lib/blog";
 

@@ -10,8 +10,8 @@ interface BlogPropsList {
 
 export default function BlogSection({posts}: BlogPropsList){
     return(
-        <div className="py-10">
-            <SectionHeading heading = "Blogs" clasName="mb-2" />
+        <div className="pt-10">
+            <SectionHeading heading = "Blogs" />
             <BlogList showTags={false} posts={posts.slice(0, 3)}  />
             <div className="mt-5 flex justify-center">
             <Button variant="outline" >

@@ -20,7 +20,7 @@ export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
   })
 
   return (
-    <Link className="group w-full py-4" href={`/blogs/${slug}`}>
+    <Link className="group w-full pb-4" href={`/blogs/${slug}`}>
           <h3 className="text-foreground text-[18px] font-bold">
         {title}
       </h3>

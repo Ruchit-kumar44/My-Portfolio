@@ -89,7 +89,7 @@ export default function ContactSection() {
     }
 
   return (
-    <div className="py-5 w-full">
+    <div className="py-8 w-full">
       <h1 className="text-center text-6xl font-black">
         Let's Work <br /> Together
       </h1>
