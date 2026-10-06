@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <Container className="py-12">
-      <div className="space-y-8">
+      <div className="space-y-6">
         {/* header */}
         <div className="space-y-4 text-center">
           <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
@@ -36,22 +36,8 @@ export default function Projects() {
         <Separator />
         
        {/* projects */}
-
-        <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold"> 
-               All Projects
-               {projects.length > 0 &&(
-                <span className="text-muted-foreground ml-2 text-sm font-normal">
-                  ({projects.length}{' '}
-                  {projects.length === 1 ? 'project' : 'projects'})
-                </span>
-               )}
-               </h2>
-          </div>
-
+        <div>
          <ProjectList projects={projects} />
-
         </div>
       </div>
     </Container>
