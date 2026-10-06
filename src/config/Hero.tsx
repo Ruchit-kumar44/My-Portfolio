@@ -25,7 +25,7 @@ export const skillComponents = {
 export const heroConfig = {
   name: "Ruchit thakur",
   title: "A Backend-focused Full Stack Developer.",
-  avatar: "/images/logo.jpg",
+  avatar: "/images/animeLogo.png",
 
  
   // Buttons Configuration

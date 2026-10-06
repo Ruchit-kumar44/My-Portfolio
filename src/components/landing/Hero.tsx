@@ -23,7 +23,7 @@ export default function HeroSection() {
           src={avatar}
           width={100}
           height={100}
-          className="size-24 rounded-full bg-blue-300 dark:bg-red-200"
+          className="size-24 rounded-full"
         ></Image>
         <div className="flex items-center">
           <h1 className="font-bold dark:text-white text-2xl">
