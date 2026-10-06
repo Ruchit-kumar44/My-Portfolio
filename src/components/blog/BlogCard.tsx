@@ -20,17 +20,18 @@ export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
   })
 
   return (
-    <Link className="group flex justify-between items-center w-full py-4" href={`/blogs/${slug}`}>
-        <div>
-              <h3 className="text-foreground text-[18px] font-bold">
+    <Link className="group w-full py-4" href={`/blogs/${slug}`}>
+          <h3 className="text-foreground text-[18px] font-bold">
         {title}
       </h3>
       <p className="text-secondary text-sm font-medium mt-1">{description}</p>
-
+      
+      <div className="flex justify-between items-end lg:items-center">
+      <div>
       <div className="py-1 text-secondary w-full flex flex-wrap justify-between items-center gap-2">
         {showTags &&
           <div className="flex flex-wrap gap-2">
-          {tags.slice(0, 3).map((tag) => (
+          {tags.slice(0, 2).map((tag) => (
             <Badge key={tag} variant="secondary" className="text-xs text-secondary rounded-sm">
               {tag}
             </Badge>
@@ -43,14 +44,14 @@ export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
         </div>
         }
       </div>
-
       <time className="text-secondary flex items-center gap-2 text-xs" dateTime={date}>
         <Calender className="size-4" /> {formattedDate}
       </time>
-        </div>
+      </div>
        <p className="flex text-secondary items-center gap-1 text-sm font-medium">
           read more <ArrowRight className="size-4" />
         </p>
+       </div>
     </Link>
   )
 }
