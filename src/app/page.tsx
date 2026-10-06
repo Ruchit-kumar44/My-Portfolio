@@ -10,14 +10,11 @@ import { getPublishedBlogPosts } from "@/lib/blog";
 export default function Home() {
   const posts = getPublishedBlogPosts();
   return (
-    <div>
       <Container>
         <Hero></Hero>
         <Projects></Projects>
-        <AboutSection ></AboutSection>
         <Blog posts={posts}></Blog>
         <ContactSection></ContactSection>
       </Container>
-    </div>
   )
 }
