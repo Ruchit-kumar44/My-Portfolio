@@ -4,7 +4,6 @@ import { Button } from "../ui/button";
 import CV from "../svgs/Cv";
 import Chat from "../svgs/Chat";
 import Link from "next/link";
-import { cn } from '@/lib/utils';
 import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
 
 
@@ -38,7 +37,7 @@ export default function HeroSection() {
 
       {/* button mapping */}
 
-      <div className="mt-8 flex gap-4">
+      <div className="mt-5 flex gap-4">
         {buttons.map((button, index) => {
           const IconComponent =
             buttonIcons[button.icon as keyof typeof buttonIcons];
@@ -48,10 +47,6 @@ export default function HeroSection() {
               key={index}
               asChild
               variant={button.variant as "outline" | "default"}
-              className={cn(
-                button.variant === "outline" && "inset-shadow-indigo-500",
-                button.variant === "default" && "inset-shadow-indigo-500",
-              )}
             >
               <Link href={button.href}>
                 {IconComponent && <IconComponent />}
@@ -63,7 +58,7 @@ export default function HeroSection() {
       </div>
 
       {/* social link mapping */}
-      <div className="mt-8 flex gap-2">
+      <div className="mt-5 flex gap-2">
         {socialLnks.map((link)=>{
           return(
            <Tooltip key={link.name} delayDuration={0}>
