@@ -10,7 +10,7 @@ export default function AboutSection(){
     
     return(
         <div className="pb-10">
-            <SectionHeading heading="This is me" clasName="mb-2" />
+            <SectionHeading heading="This is me" className="mb-2" />
             {/* <h4 className="text-secondary text-small">this is me</h4> */}
             <Separator />
             <div className="mt-4 flex flex-col gap-4 md:flex-row">

@@ -2,25 +2,6 @@ import Github from "@/components/svgs/Github"
 import LinkedIn from "@/components/svgs/Linkedin"
 import Mail from "@/components/svgs/Mail"
 import X from "@/components/svgs/X"
-import Bun from "@/components/technologies/Bun"
-import ExpressJs from "@/components/technologies/ExpressJs"
-import NextJs from "@/components/technologies/NextJs"
-import PostgreSQL from "@/components/technologies/PostgreSQL"
-import ReactIcon from "@/components/technologies/ReactIcon"
-import TypeScript from "@/components/technologies/TypeScript"
-
-
-
-
-export const skillComponents = {
-  TypeScript: TypeScript,
-  ReactIcon: ReactIcon,
-  NextJs:    NextJs,
-  ExpressJs: ExpressJs,
-  PostgreSQL: PostgreSQL,
-  Bun:        Bun
-
-}
 
 export const heroConfig = {
   name: "Ruchit thakur",

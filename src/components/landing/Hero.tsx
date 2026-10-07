@@ -58,7 +58,7 @@ export default function HeroSection() {
       </div>
 
       {/* social link mapping */}
-      <div className="mt-5 flex gap-2">
+      <div className="mt-3 flex gap-2">
         {socialLnks.map((link)=>{
           return(
            <Tooltip key={link.name} delayDuration={0}>

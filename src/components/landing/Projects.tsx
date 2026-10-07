@@ -7,7 +7,7 @@ import SectionHeading from "../common/SectioHeading";
 export default function ProjectsSection(){
     return(
        <div className="pt-10">
-         <SectionHeading  heading = "Projects" />
+         <SectionHeading  heading = "Projects" className="mb-1" />
          <ProjectList className="" projects={projects.slice(0, 2)} />
           <div className="mt-5 flex justify-center">
             <Button variant="outline" >

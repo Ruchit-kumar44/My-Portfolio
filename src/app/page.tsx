@@ -10,7 +10,7 @@ export default function Home() {
   const posts = getPublishedBlogPosts();
   return (
       <Container>
-        <Hero></Hero>
+        <Hero></Hero> 
         <Projects></Projects>
         <Blog posts={posts}></Blog>
         <ContactSection></ContactSection>
