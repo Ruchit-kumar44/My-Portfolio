@@ -25,13 +25,13 @@ export default function HeroSection() {
           className="size-24 rounded-full"
         ></Image>
         <div className="flex items-center">
-          <h1 className="font-bold dark:text-white text-2xl">
+          <h1 className="font-bold dark:text-white text-xl md:text-2xl">
             {name} <br />{" "}
-            <span className="text-secondary text-xl font-light">{title}</span>
+            <span className="text-secondary text-xs md:text-xl font-medium">{title}</span>
           </h1>
         </div>
       </div>
-      <div className="mt-4 text-small font-medium text-secondary">
+      <div className="mt-4 text-xs md:text-small  font-medium text-secondary">
         Love building solid backends, breaking them, then building better ones.
       </div>
 

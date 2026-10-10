@@ -18,7 +18,7 @@ export function BlogList({ posts, showTags = true, className = "" }: BlogListPro
   }
 
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={`flex flex-col space-y-5 lg:space-y-3  ${className}`}>
       {posts.map((post) => (
         <BlogCard showTags={showTags} key={post.slug} post={post} />
       ))}

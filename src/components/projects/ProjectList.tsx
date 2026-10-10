@@ -17,7 +17,7 @@ export default function ProjectList({projects, className}: ProjectListprops){
    }
 
    return(
-    <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-3  ${className}`}>
+    <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-3 justify-items-center ${className}`}>
        {
         projects.map((project: Project)=>(
             <ProjectCard2 key={project.title} project={project}></ProjectCard2>
