@@ -5,7 +5,7 @@ import X from "@/components/svgs/X"
 
 export const heroConfig = {
   name: "Ruchit thakur",
-  title: "A Backend-focused Full Stack Developer.",
+  title: "A backend focused full stack Engineer.",
   avatar: "/images/animeLogo.png",
 
  

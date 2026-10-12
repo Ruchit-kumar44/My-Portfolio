@@ -10,18 +10,12 @@ import React from 'react';
 
 // Technology mapping for dynamic components
 const TechnologyComponents: Record<string, React.ComponentType> = {
-  'Next.js': NextJs,
   nextjs: NextJs,
-  React: ReactIcon,
   react: ReactIcon,
-  TypeScript: TypeScript,
   typescript: TypeScript,
- 'Node.js': NodeJs,
   nodejs: NodeJs,
   node: NodeJs,
-  PostgreSQL: PostgreSQL,
   postgresql: PostgreSQL,
-  Bun: Bun,
   bun: Bun,
 };
 

@@ -22,12 +22,16 @@ export default function HeroSection() {
           src={avatar}
           width={100}
           height={100}
+          priority={true} 
+          fetchPriority="high"
           className="size-24 rounded-full"
         ></Image>
         <div className="flex items-center">
           <h1 className="font-bold dark:text-white text-xl md:text-2xl">
             {name} <br />{" "}
-            <span className="text-secondary text-xs md:text-xl font-medium">{title}</span>
+            <span className="text-secondary text-xs md:text-xl font-light">
+             <span className="">{title}</span>
+            </span>
           </h1>
         </div>
       </div>

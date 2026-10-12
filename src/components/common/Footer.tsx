@@ -8,7 +8,7 @@ export default function Footer(){
 
     return(
         <div className="w-full min-h-70 border-t border-#909092 bg-[#F7F7F7] dark:bg-[#161515]">
-          <Container className="text-secondary text-small">
+          <Container className="text-secondary text-xs md:text-small">
              <div className="w-full flex flex-col gap-y-10 py-10  lg:flex-row lg:justify-between">
                 <div className="w-full lg:max-w-55">
                     <p className="pb-3 font-medium">NAVIGATE</p>

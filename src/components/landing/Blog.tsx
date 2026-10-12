@@ -15,7 +15,7 @@ export default function BlogSection({posts}: BlogPropsList){
             <BlogList showTags={false} posts={posts.slice(0, 3)}  />
             <div className="mt-5 flex justify-center">
             <Button variant="outline" >
-                <Link href='/blogs'>Show all blogs</Link>
+                <Link  href='/blogs'><span className="text-xs md:text-small">Show all blogs</span></Link>
             </Button>
           </div>
         </div>

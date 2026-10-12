@@ -28,10 +28,10 @@ export default function Navbar(){
             </div>
          </div>
          <motion.div 
-         className="absolute bottom-0 left-0 w-full h-px
+         className={`absolute bottom-0 left-0 w-full h-px
          bg-linear-to-r from-indigo-500 via-purple-400 to-teal-400
          shadow-[0_1px_10px_rgba(99,102,241,0.2)]
-         dark:shadow-[0_1px_10px_rgba(139,92,246,0.3)]"
+         dark:shadow-[0_1px_10px_rgba(139,92,246,0.3)]`}
          style={{scaleX: scrollYProgress, originX: 0}} />
       </Container>
   

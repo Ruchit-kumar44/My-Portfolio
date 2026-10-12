@@ -19,6 +19,7 @@ export default function ProjectCard2({ project }: ProjectCardProps) {
         src={image || "/project/notesbuddy.png"}
         alt={title}
         fill
+        preload={true}
         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         className="object-cover"
       />

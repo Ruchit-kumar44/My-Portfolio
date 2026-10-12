@@ -21,10 +21,10 @@ export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
 
   return (
     <Link className="group w-full pb-4" href={`/blogs/${slug}`}>
-          <h3 className="text-foreground text-[18px] font-bold">
+          <h3 className="text-foreground text-[16px]  md:text-[18px] font-bold">
         {title}
       </h3>
-      <p className="text-secondary text-sm font-medium mt-1">{description}</p>
+      <p className="text-secondary text-xs md:text-small font-medium mt-1">{description}</p>
       
       <div className="flex justify-between items-end lg:items-center">
       <div>
@@ -48,7 +48,7 @@ export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
         <Calender className="size-4" /> {formattedDate}
       </time>
       </div>
-       <p className="flex text-secondary items-center gap-1 text-sm font-medium">
+       <p className="flex text-secondary items-center gap-1 text-xs  md:text-small font-medium">
           read more <ArrowRight className="size-4" />
         </p>
        </div>
