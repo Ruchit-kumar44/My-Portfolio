@@ -6,6 +6,7 @@ import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "../components/ui/tooltip";
 import { generateMetadata as getMetadata} from "@/config/Meta";
+import ReactLenis from "lenis/react";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -23,11 +24,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         enableSystem
         disableTransitionOnChange
         >
-        <Navbar></Navbar>
+        <ReactLenis root>
+        <Navbar/>
         <TooltipProvider>
         {children}
         </TooltipProvider>
-        <Footer></Footer>
+        <Footer/>
+        </ReactLenis>
        </ThemeProvider>
       </body>
     </html>
