@@ -1,5 +1,6 @@
 import { BlogPostPreview } from "@/types/Blog"
 import BlogCard from "./BlogCard"
+import { StaggerItem, StaggerList } from "../motion/Stagger"
 
 interface BlogListProps {
   posts: BlogPostPreview[],
@@ -18,10 +19,12 @@ export function BlogList({ posts, showTags = true, className = "" }: BlogListPro
   }
 
   return (
-    <div className={`flex flex-col space-y-5 lg:space-y-3  ${className}`}>
+    <StaggerList className={`flex flex-col space-y-5 lg:space-y-3  ${className}`}>
       {posts.map((post) => (
-        <BlogCard showTags={showTags} key={post.slug} post={post} />
+        <StaggerItem  key={post.slug}>
+        <BlogCard showTags={showTags} post={post} />
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerList>
   )
 }

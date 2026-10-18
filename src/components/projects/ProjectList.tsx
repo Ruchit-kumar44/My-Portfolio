@@ -1,5 +1,6 @@
 import { Project } from "@/types/Project";
 import ProjectCard2 from "./ProjectCard2";
+import { StaggerItem, StaggerList } from "../motion/Stagger";
 
 
 interface ProjectListprops {
@@ -17,13 +18,15 @@ export default function ProjectList({projects, className}: ProjectListprops){
    }
 
    return(
-    <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-3 justify-items-center ${className}`}>
+    <StaggerList className={`grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-6 md:gap-3 justify-items-center ${className}`}>
        {
         projects.map((project: Project)=>(
-            <ProjectCard2 key={project.title} project={project}></ProjectCard2>
+            <StaggerItem key={project.title}>
+            <ProjectCard2  project={project}></ProjectCard2>
+            </StaggerItem>
         ))
        }
-    </div>
+    </StaggerList>
    )
     
 }

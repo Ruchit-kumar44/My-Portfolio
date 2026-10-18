@@ -13,8 +13,8 @@ export default function ProjectCard2({ project }: ProjectCardProps) {
   return (
     <Link
       href={projectDetailsPageSlug}
-      className="relative block w-79 h-50 overflow-hidden rounded-lg border"
-    >
+      className="relative block w-79 h-50 overflow-hidden rounded-lg hover:scale-101 transition-transform ease-out duration-0.8"
+    > 
       <Image
         src={image || "/project/notesbuddy.png"}
         alt={title}

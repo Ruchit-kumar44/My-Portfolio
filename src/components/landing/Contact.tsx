@@ -90,16 +90,16 @@ export default function ContactSection() {
 
   return (
     <div className="py-8 w-full">
-      <h1 className="text-center text-6xl font-black">
+      <h1 className="text-center text-3xl md:text-6xl font-black">
         Let's Work <br /> Together
       </h1>
 
-      <Card className="mt-10 border-none shadow-none">
+      <Card className="mt-5 md:mt-10 border-none shadow-none">
         <CardHeader>
-          <CardTitle className="text-4xl font-black">
+          <CardTitle className=" text-2xl md:text-4xl font-black">
             {contactConfig.title}
           </CardTitle>
-          <CardDescription className="text-small">
+          <CardDescription className="text-xs md:text-small">
             <p className="text-secondary font-medium">
               Please contact me directly at{" "}
               <a
@@ -112,7 +112,7 @@ export default function ContactSection() {
             </p>
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-xs md:text-small">
             <form onSubmit={Form.handleSubmit(onSubmit)}>
               <FieldGroup>
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -127,6 +127,7 @@ export default function ContactSection() {
                                      id={field.name}
                                      placeholder="Your full name"
                                      aria-invalid={fieldState.invalid}
+                                     className="text-xs md:text-small font-medium"
                                    />
                                    {fieldState.invalid && (
                                       <FieldError errors={[fieldState.error]} />
@@ -146,6 +147,7 @@ export default function ContactSection() {
                                      type="email"
                                      placeholder="you@example.com"
                                      aria-invalid={fieldState.invalid}
+                                     className="text-xs md:text-small font-medium"
                                    />
                                    {fieldState.invalid && (
                                       <FieldError errors={[fieldState.error]} />
@@ -166,6 +168,7 @@ export default function ContactSection() {
                                      type="tel"
                                      placeholder="+1234567890"
                                      aria-invalid={fieldState.invalid}
+                                     className="text-xs md:text-small font-medium"
                                    />
                                    {fieldState.invalid && (
                                       <FieldError errors={[fieldState.error]} />
@@ -185,6 +188,7 @@ export default function ContactSection() {
                                      rows={5}
                                      placeholder="tell me about your project/idea..."
                                      aria-invalid={fieldState.invalid}
+                                     className="text-xs md:text-small font-medium"
                                    />
                                    {fieldState.invalid && (
                                       <FieldError errors={[fieldState.error]} />
@@ -200,7 +204,7 @@ export default function ContactSection() {
                                 </>
                             ) : (
                                 <>
-                                   <Send className="mr-2 size-4" />
+                                   <Send className="mr-2 size-4 text-xs md:text-small font-bold" />
                                     Send Message
                                 </>
                             )}
