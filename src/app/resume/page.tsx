@@ -1,6 +1,5 @@
 import Container from "@/components/common/Container";
-import Reveal from "@/components/motion/Reveal";
-import { Card } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/Reveal";
 import { Separator } from "@/components/ui/separator";
 import { generateMetadata as getMetadata } from "@/config/Meta";
 import { Metadata } from "next";

@@ -35,7 +35,7 @@ export default function Footer(){
                 </div>
              </div>
              <Separator/>
-             <div className="py-8 flex items-center">
+             <div className=" pb-12 pt-8 flex items-center">
                  &copy;{' '} {new Date().getFullYear()} {FooterConfig.name}  {FooterConfig.copyright}
              </div>
             </Container>

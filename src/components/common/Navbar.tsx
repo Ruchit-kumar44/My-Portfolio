@@ -13,7 +13,7 @@ export default function Navbar(){
    const {scrollYProgress} = useScroll()
     return(
     
-      <Container className="sticky top-0 z-20  py-4 backdrop-blur-sm">
+      <Container className="sticky top-0 z-20  py-4 backdrop-blur-xs">
          <div className="flex justify-between items-center text-xs md:text-small font-medium">
             <div className="text-secondary flex items-center justify-between gap-5">
                {NavbarConfig.NavItems.map((item)=>{

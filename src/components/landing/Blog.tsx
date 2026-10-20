@@ -3,6 +3,7 @@ import { BlogList } from "../blog/BlogList";
 import SectionHeading from "../common/SectioHeading";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import {Reveal} from "../motion/Reveal";
 
 interface BlogPropsList {
     posts: BlogPostPreview[],
