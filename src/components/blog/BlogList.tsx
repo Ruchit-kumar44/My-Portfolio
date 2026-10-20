@@ -19,7 +19,7 @@ export function BlogList({ posts, showTags = true, className = "" }: BlogListPro
   }
 
   return (
-    <StaggerList className={`flex flex-col space-y-5 lg:space-y-3  ${className}`}>
+    <StaggerList className={`flex flex-col space-y-5 lg:space-y-5  ${className}`}>
       {posts.map((post) => (
         <StaggerItem  key={post.slug}>
         <BlogCard showTags={showTags} post={post} />

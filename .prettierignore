@@ -1,0 +1,18 @@
+# Next.js build outputs and cache
+.next/
+out/
+build/
+
+# Package managers lockfiles and dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Static assets and public files (prevents trying to format images/fonts)
+public/
+
+# Environment secrets (keeps files secure and untouched)
+.env*
+*.local

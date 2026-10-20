@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 interface BlurRevealProps {
   children: React.ReactNode;
@@ -10,12 +10,12 @@ interface BlurRevealProps {
 export function Reveal({ children, className }: BlurRevealProps) {
   return (
     <motion.div
-      className={className} 
+      className={className}
       initial={{ y: 30 }}
       animate={{ y: 0 }}
-      transition={{ 
-        duration: 0.5, 
-        ease: [0.25, 0.1, 0.25, 1] 
+      transition={{
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
       }}
     >
       {children}
