@@ -11,10 +11,10 @@ export function Reveal({ children, className }: BlurRevealProps) {
   return (
     <motion.div
       className={className} 
-      initial={{ y:10 }}
+      initial={{ y: 30 }}
       animate={{ y: 0 }}
       transition={{ 
-        duration: 0.7, 
+        duration: 0.5, 
         ease: [0.25, 0.1, 0.25, 1] 
       }}
     >

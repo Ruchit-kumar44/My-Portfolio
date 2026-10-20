@@ -1,5 +1,6 @@
 import { BlogList } from "@/components/blog/BlogList";
 import Container from "@/components/common/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { Separator } from "@/components/ui/separator";
 import { generateMetadata as getMetadata } from "@/config/Meta";
 import { getPublishedBlogPosts } from "@/lib/blog";
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = getPublishedBlogPosts()
   return (
+    <Reveal>
     <Container className="py-12">
       <div className="space-y-8">
        <div className="">
@@ -38,5 +40,6 @@ export default function BlogPage() {
        <BlogList showTags={true} posts={posts} />
       </div>
     </Container>
+    </Reveal>
   );
 }
