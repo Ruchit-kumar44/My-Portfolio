@@ -1,3 +1,7 @@
+import React from 'react';
+
+import Image from 'next/image';
+
 import Bun from '@/components/technologies/Bun';
 import NextJs from '@/components/technologies/NextJs';
 import NodeJs from '@/components/technologies/NodeJs';
@@ -5,8 +9,6 @@ import PostgreSQL from '@/components/technologies/PostgreSQL';
 import ReactIcon from '@/components/technologies/ReactIcon';
 import TypeScript from '@/components/technologies/TypeScript';
 import { Badge } from '@/components/ui/badge';
-import Image from 'next/image';
-import React from 'react';
 
 // Technology mapping for dynamic components
 const TechnologyComponents: Record<string, React.ComponentType> = {

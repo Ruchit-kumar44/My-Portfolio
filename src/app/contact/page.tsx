@@ -1,7 +1,8 @@
-import Container from "@/components/common/Container";
-import { Metadata } from "next";
-import { generateMetadata as getMetadata } from "@/config/Meta";
-import ContactSection from "@/components/landing/Contact";
+import { Metadata } from 'next';
+
+import Container from '@/components/common/Container';
+import ContactSection from '@/components/landing/Contact';
+import { generateMetadata as getMetadata } from '@/config/Meta';
 
 export const metadata: Metadata = {
   ...getMetadata('/contact'),
@@ -11,18 +12,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
-  }
-}
+  },
+};
 
-export default function Contacts(){
-
-    return(
-      <Container>
-         <ContactSection />
-      </Container>
-    )
+export default function Contacts() {
+  return (
+    <Container>
+      <ContactSection />
+    </Container>
+  );
 }

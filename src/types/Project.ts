@@ -1,15 +1,15 @@
 export interface Project {
-    title : string;
-    description?: string;
-    video?: string;
-    image?: string;
-    github?: string;
-    link?: string;
-    live: string;
-    projectDetailsPageSlug: string;
-    technologies: {name: string; icon : React.ReactNode}[]
-    details?: boolean
-    isWorking?: boolean
+  title: string;
+  description?: string;
+  video?: string;
+  image?: string;
+  github?: string;
+  link?: string;
+  live: string;
+  projectDetailsPageSlug: string;
+  technologies: { name: string; icon: React.ReactNode }[];
+  details?: boolean;
+  isWorking?: boolean;
 }
 
 export interface ProjectCaseStudyFrontmatter {

@@ -1,4 +1,3 @@
-
 export default function Moon({ className }: { className?: string }) {
   return (
     <svg

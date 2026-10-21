@@ -1,90 +1,90 @@
-import ExpressJs from "@/components/technologies/ExpressJs";
-import NextJs from "@/components/technologies/NextJs";
-import NodeJs from "@/components/technologies/NodeJs";
-import PostgreSQL from "@/components/technologies/PostgreSQL";
-import ReactIcon from "@/components/technologies/ReactIcon";
-import TypeScript from "@/components/technologies/TypeScript";
-import { Project } from "@/types/Project";
+import ExpressJs from '@/components/technologies/ExpressJs';
+import NextJs from '@/components/technologies/NextJs';
+import NodeJs from '@/components/technologies/NodeJs';
+import PostgreSQL from '@/components/technologies/PostgreSQL';
+import ReactIcon from '@/components/technologies/ReactIcon';
+import TypeScript from '@/components/technologies/TypeScript';
+import { Project } from '@/types/Project';
 
 export const projects: Project[] = [
-   {
-     title: "Notesbuddy",
-     description:
-        'A comprehensive study platform with notes, flashcards,  AI chatbot, interactive learning tools',
-     link: 'https://notesbuddy.in',
-     image: '/project/notesbuddy.png',
-     technologies: [
-        {name: "Nextjs", icon: <NextJs /> },
-        {name: "Exppress", icon: <NodeJs />},
-        {name: "Nodejs", icon: <ExpressJs />},
-        {name: "PostgreSql", icon: <PostgreSQL />},
-        {name: "Reactjs", icon: <ReactIcon />},
-        {name: "Typescript", icon: <TypeScript />}
-     ],
-     github: "https://github.com/ramxcodes/notesbuddy",
-     live: "https://notesbuddy.in",
-     projectDetailsPageSlug: '/projects/notesbuddy',
-     details: true,
-     isWorking: true,
-   },
-   {
-     title: "Notebuddy",
-     description:
-        'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
-     link: 'https://notesbuddy.in',
-     image: '/project/notesbuddy.png',
-     technologies: [
-        {name: "Nextjs", icon: <NextJs /> },
-        {name: "Exppress", icon: <NodeJs />},
-        {name: "Nodejs", icon: <ExpressJs />},
-        {name: "PostgreSql", icon: <PostgreSQL />},
-        {name: "Reactjs", icon: <ReactIcon />},
-        {name: "Typescript", icon: <TypeScript />}
-     ],
-     github: "https://github.com/ramxcodes/notesbuddy",
-     live: "https://notesbuddy.in",
-     details: true,
-     projectDetailsPageSlug: '/projects/notesbuddy',
-     isWorking: true,
-   },
-   {
-     title: "Notesbaddy",
-     description:
-        'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
-     link: 'https://notesbuddy.in',
-     image: '/project/notesbuddy.png',
-     technologies: [
-        {name: "Nextjs", icon: <NextJs /> },
-        {name: "Exppress", icon: <NodeJs />},
-        {name: "Nodejs", icon: <ExpressJs />},
-        {name: "PostgreSql", icon: <PostgreSQL />},
-        {name: "Reactjs", icon: <ReactIcon />},
-        {name: "Typescript", icon: <TypeScript />}
-     ],
-     github: "https://github.com/ramxcodes/notesbuddy",
-     live: "https://notesbuddy.in",
-     projectDetailsPageSlug: '/projects/notesbuddy',
-     details: true,
-     isWorking: false
-   },
-   {
-     title: "Notesbudy",
-     description:
-        'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
-     link: 'https://notesbuddy.in',
-     image: '/project/notesbuddy.png',
-     technologies: [
-        {name: "Nextjs", icon: <NextJs /> },
-        {name: "Exppress", icon: <NodeJs />},
-        {name: "Nodejs", icon: <ExpressJs />},
-        {name: "PostgreSql", icon: <PostgreSQL />},
-        {name: "Reactjs", icon: <ReactIcon />},
-        {name: "Typescript", icon: <TypeScript />}
-     ],
-     github: "https://github.com/ramxcodes/notesbuddy",
-     live: "https://notesbuddy.in",
-     projectDetailsPageSlug: '/projects/notesbuddy',
-     details: true,
-     isWorking: true,
-   },
-]
+  {
+    title: 'Notesbuddy',
+    description:
+      'A comprehensive study platform with notes, flashcards,  AI chatbot, interactive learning tools',
+    link: 'https://notesbuddy.in',
+    image: '/project/notesbuddy.png',
+    technologies: [
+      { name: 'Nextjs', icon: <NextJs /> },
+      { name: 'Exppress', icon: <NodeJs /> },
+      { name: 'Nodejs', icon: <ExpressJs /> },
+      { name: 'PostgreSql', icon: <PostgreSQL /> },
+      { name: 'Reactjs', icon: <ReactIcon /> },
+      { name: 'Typescript', icon: <TypeScript /> },
+    ],
+    github: 'https://github.com/ramxcodes/notesbuddy',
+    live: 'https://notesbuddy.in',
+    projectDetailsPageSlug: '/projects/notesbuddy',
+    details: true,
+    isWorking: true,
+  },
+  {
+    title: 'Notebuddy',
+    description:
+      'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
+    link: 'https://notesbuddy.in',
+    image: '/project/notesbuddy.png',
+    technologies: [
+      { name: 'Nextjs', icon: <NextJs /> },
+      { name: 'Exppress', icon: <NodeJs /> },
+      { name: 'Nodejs', icon: <ExpressJs /> },
+      { name: 'PostgreSql', icon: <PostgreSQL /> },
+      { name: 'Reactjs', icon: <ReactIcon /> },
+      { name: 'Typescript', icon: <TypeScript /> },
+    ],
+    github: 'https://github.com/ramxcodes/notesbuddy',
+    live: 'https://notesbuddy.in',
+    details: true,
+    projectDetailsPageSlug: '/projects/notesbuddy',
+    isWorking: true,
+  },
+  {
+    title: 'Notesbaddy',
+    description:
+      'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
+    link: 'https://notesbuddy.in',
+    image: '/project/notesbuddy.png',
+    technologies: [
+      { name: 'Nextjs', icon: <NextJs /> },
+      { name: 'Exppress', icon: <NodeJs /> },
+      { name: 'Nodejs', icon: <ExpressJs /> },
+      { name: 'PostgreSql', icon: <PostgreSQL /> },
+      { name: 'Reactjs', icon: <ReactIcon /> },
+      { name: 'Typescript', icon: <TypeScript /> },
+    ],
+    github: 'https://github.com/ramxcodes/notesbuddy',
+    live: 'https://notesbuddy.in',
+    projectDetailsPageSlug: '/projects/notesbuddy',
+    details: true,
+    isWorking: false,
+  },
+  {
+    title: 'Notesbudy',
+    description:
+      'A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools',
+    link: 'https://notesbuddy.in',
+    image: '/project/notesbuddy.png',
+    technologies: [
+      { name: 'Nextjs', icon: <NextJs /> },
+      { name: 'Exppress', icon: <NodeJs /> },
+      { name: 'Nodejs', icon: <ExpressJs /> },
+      { name: 'PostgreSql', icon: <PostgreSQL /> },
+      { name: 'Reactjs', icon: <ReactIcon /> },
+      { name: 'Typescript', icon: <TypeScript /> },
+    ],
+    github: 'https://github.com/ramxcodes/notesbuddy',
+    live: 'https://notesbuddy.in',
+    projectDetailsPageSlug: '/projects/notesbuddy',
+    details: true,
+    isWorking: true,
+  },
+];

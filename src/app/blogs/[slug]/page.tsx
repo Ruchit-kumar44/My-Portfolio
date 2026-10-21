@@ -1,16 +1,17 @@
-import { BlogContent } from "@/components/blog/BlogContent"
-import Container from "@/components/common/Container"
-import ArrowLeft from "@/components/svgs/ArrowLeft"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { siteConfig } from "@/config/Meta"
-import { getBlogPostBySlug, getBlogPostsSlugs } from "@/lib/blog"
-import { Metadata } from "next"
-import Link from "next/link"
-import { notFound } from "next/navigation"
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
+import { BlogContent } from '@/components/blog/BlogContent';
+import Container from '@/components/common/Container';
+import ArrowLeft from '@/components/svgs/ArrowLeft';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { siteConfig } from '@/config/Meta';
+import { getBlogPostBySlug, getBlogPostsSlugs } from '@/lib/blog';
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
 // export async function generateStaticParams() {
@@ -21,14 +22,14 @@ interface BlogPostPageProps {
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post || !post.frontmatter.isPublished) {
-    return { title: "Post Not Found" }
+    return { title: 'Post Not Found' };
   }
 
-  const { title, description, image } = post.frontmatter
+  const { title, description, image } = post.frontmatter;
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -38,24 +39,23 @@ export async function generateMetadata({
       title,
       description,
       images: [image],
-      type: "article",
+      type: 'article',
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [image],
     },
-  }
+  };
 }
 
-
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post || !post.frontmatter.isPublished) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -80,5 +80,5 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </Container>
-  )
+  );
 }

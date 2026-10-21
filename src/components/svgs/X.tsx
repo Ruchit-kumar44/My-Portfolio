@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function X({className}: {className?:string}) {
+export default function X({ className }: { className?: string }) {
   return (
     <svg
       className={className}

@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react';
 
 interface TechBadgeProps {
-  name: string
-  children: React.ReactNode
+  name: string;
+  children: React.ReactNode;
 }
 
 export default function TechBadge({ name, children }: TechBadgeProps) {
@@ -13,5 +13,5 @@ export default function TechBadge({ name, children }: TechBadgeProps) {
         {name}
       </p>
     </div>
-  )
+  );
 }

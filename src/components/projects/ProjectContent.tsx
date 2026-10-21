@@ -1,13 +1,15 @@
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { ProjectCaseStudyFrontmatter } from '@/types/Project';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import Image from 'next/image';
+
 import Github from '../svgs/Github';
 import Website from '../svgs/Website';
-import  {ProjectComponents}  from './ProjectComponent';
-import Link from 'next/link';
+import { ProjectComponents } from './ProjectComponent';
 
 interface ProjectContentProps {
   frontmatter: ProjectCaseStudyFrontmatter;
@@ -110,9 +112,7 @@ export function ProjectContent({ frontmatter, content }: ProjectContentProps) {
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-3">
             {live && (
-              <Button
-                asChild
-               >
+              <Button asChild>
                 <Link
                   href={live}
                   target="_blank"
@@ -125,10 +125,7 @@ export function ProjectContent({ frontmatter, content }: ProjectContentProps) {
               </Button>
             )}
             {github && (
-              <Button
-                variant="outline"
-                asChild
-              >
+              <Button variant="outline" asChild>
                 <Link
                   href={github}
                   target="_blank"
@@ -208,10 +205,7 @@ export function ProjectContent({ frontmatter, content }: ProjectContentProps) {
 
       {/* Content */}
       <div className="prose prose-neutral dark:prose-invert max-w-none">
-        <MDXRemote
-          source={content}
-          components={ProjectComponents}
-        />
+        <MDXRemote source={content} components={ProjectComponents} />
       </div>
     </article>
   );

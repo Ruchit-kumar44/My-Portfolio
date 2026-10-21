@@ -1,7 +1,6 @@
-
 export const Skills = {
-    frontend: [
-        {
+  frontend: [
+    {
       name: 'Javascript',
       href: 'https://www.typescriptlang.org/',
       component: 'TypeScript',
@@ -38,38 +37,38 @@ export const Skills = {
       href: 'https://nextjs.org/',
       component: 'NextJs',
     },
-    ],
-    
-    backend: [
-        {
-        name: 'Nodejs',
-        href: 'https://www.typescriptlang.org/',
-        component: 'TypeScript',
-    },
-        {
-        name: 'ExpressJs',
-        href: 'https://www.typescriptlang.org/',
-        component: 'TypeScript',
+  ],
+
+  backend: [
+    {
+      name: 'Nodejs',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
     },
     {
-        name: 'MySQL',
-        href: 'https://www.typescriptlang.org/',
-        component: 'TypeScript',
+      name: 'ExpressJs',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
     },
-        {
-        name: 'PostgreSQL',
-        href: 'https://www.typescriptlang.org/',
-        component: 'TypeScript',
+    {
+      name: 'MySQL',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
     },
-        {
-        name: 'MangoDB',
-        href: 'https://www.typescriptlang.org/',
-        component: 'TypeScript',
+    {
+      name: 'PostgreSQL',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
     },
-        {
-        name: 'Prisma',
-        href: 'https://www.typescriptlang.org/',
-        component: 'TypeScript',
+    {
+      name: 'MangoDB',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
     },
-    ]
-}
+    {
+      name: 'Prisma',
+      href: 'https://www.typescriptlang.org/',
+      component: 'TypeScript',
+    },
+  ],
+};

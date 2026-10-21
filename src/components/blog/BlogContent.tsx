@@ -1,8 +1,9 @@
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
+
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { BlogsFrontmatter } from '@/types/Blog';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import Image from 'next/image';
 
 import Calender from '../svgs/Calender';
 import { BlogComponents } from './BlogComponents';
@@ -62,10 +63,7 @@ export function BlogContent({ frontmatter, content }: BlogContentProps) {
 
       {/* Content */}
       <div className="prose prose-neutral dark:prose-invert max-w-none">
-        <MDXRemote
-          source={content}
-          components={BlogComponents}
-        />
+        <MDXRemote source={content} components={BlogComponents} />
       </div>
     </article>
   );

@@ -1,22 +1,23 @@
-import Container from "@/components/common/Container";
-import ProjectList from "@/components/projects/ProjectList";
-import { Separator } from "@/components/ui/separator";
-import { projects } from "@/config/Projects";
-import { generateMetadata as getMetadata } from "@/config/Meta";
-import { Metadata } from "next";
-import { Reveal } from "@/components/motion/Reveal";
+import { Metadata } from 'next';
+
+import Container from '@/components/common/Container';
+import { Reveal } from '@/components/motion/Reveal';
+import ProjectList from '@/components/projects/ProjectList';
+import { Separator } from '@/components/ui/separator';
+import { generateMetadata as getMetadata } from '@/config/Meta';
+import { projects } from '@/config/Projects';
 
 export const metadata: Metadata = {
-  ...getMetadata("/projects"),
+  ...getMetadata('/projects'),
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
 };

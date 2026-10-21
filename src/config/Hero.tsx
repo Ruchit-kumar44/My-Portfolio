@@ -1,14 +1,13 @@
-import Github from "@/components/svgs/Github"
-import LinkedIn from "@/components/svgs/Linkedin"
-import Mail from "@/components/svgs/Mail"
-import X from "@/components/svgs/X"
+import Github from '@/components/svgs/Github';
+import LinkedIn from '@/components/svgs/Linkedin';
+import Mail from '@/components/svgs/Mail';
+import X from '@/components/svgs/X';
 
 export const heroConfig = {
-  name: "Ruchit thakur",
-  title: "A backend focused full stack Engineer.",
-  avatar: "/images/animeLogo.png",
+  name: 'Ruchit thakur',
+  title: 'A backend focused full stack Engineer.',
+  avatar: '/images/animeLogo.png',
 
- 
   // Buttons Configuration
   buttons: [
     {
@@ -24,27 +23,29 @@ export const heroConfig = {
       icon: 'Chat',
     },
   ],
-}
+};
 
 export const socialLnks = [
-    {
-      name: "Linkedin",
-      href: 'https://x.com/ramxcodes',
-      icon: <LinkedIn className="text-secondary hover:text-[#0A66C2] transition-colors" />
-    },
-    {
-      name: "X",
-      href: 'https://x.com/ramxcodes',
-      icon: <X/>
-    },
-    {
-      name: "Github",
-      href: 'https://x.com/ramxcodes',
-      icon: <Github/>
-    },
-    {
-      name: "Mail",
-      href: 'https://x.com/ramxcodes',
-      icon: <Mail/>
-    }
-]
+  {
+    name: 'Linkedin',
+    href: 'https://x.com/ramxcodes',
+    icon: (
+      <LinkedIn className="text-secondary transition-colors hover:text-[#0A66C2]" />
+    ),
+  },
+  {
+    name: 'X',
+    href: 'https://x.com/ramxcodes',
+    icon: <X />,
+  },
+  {
+    name: 'Github',
+    href: 'https://x.com/ramxcodes',
+    icon: <Github />,
+  },
+  {
+    name: 'Mail',
+    href: 'https://x.com/ramxcodes',
+    icon: <Mail />,
+  },
+];

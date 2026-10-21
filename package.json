@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "format:fix": "prettier --write  \"**/*.{js,jsx,ts,tsx,json,md}\""
-    
+    "format": "prettier --check '**/*.{js,jsx,ts,tsx,json,md}'",
+    "format:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}'"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

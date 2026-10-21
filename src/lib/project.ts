@@ -1,73 +1,76 @@
-import path from "path";
-import fs from 'fs'
-import { ProjectCaseStudy, ProjectCaseStudyFrontmatter, ProjectCaseStudyPreview } from "@/types/Project";
-import matter from "gray-matter";
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
+import {
+  ProjectCaseStudy,
+  ProjectCaseStudyFrontmatter,
+  ProjectCaseStudyPreview,
+} from '@/types/Project';
 
+const projectsDirectory = path.join(process.cwd(), 'src/data/projects');
 
-const projectsDirectory = path.join(process.cwd(), 'src/data/projects')
+//fn to get all flies from projects directory
 
-//fn to get all flies from projects directory 
-
-export function getProjectCaseStudySlugs(): string[]{
-    if (!fs.existsSync(projectsDirectory)) {
+export function getProjectCaseStudySlugs(): string[] {
+  if (!fs.existsSync(projectsDirectory)) {
     return [];
   }
 
-  const files = fs.readdirSync(projectsDirectory)
+  const files = fs.readdirSync(projectsDirectory);
   return files
-    .filter((file)=> file.endsWith('.mdx'))
-    .map((file)=> file.replace(/\.mdx$/, ''))
+    .filter((file) => file.endsWith('.mdx'))
+    .map((file) => file.replace(/\.mdx$/, ''));
 }
 
 /**
  * Get project case study by slug with full content
  */
- export function getProjectBySlug(slug: string): ProjectCaseStudy | null{
-   try{
-      const fullPath = path.join(projectsDirectory, `${slug}.mdx`)
+export function getProjectBySlug(slug: string): ProjectCaseStudy | null {
+  try {
+    const fullPath = path.join(projectsDirectory, `${slug}.mdx`);
 
-      if (!fs.existsSync(fullPath)) {
-         return null;
-      }
-
-      const fileContent = fs.readFileSync(fullPath, 'utf8')
-      const {data, content} = matter(fileContent)
-
-      //validate data as fronmatter
-      const frontmatter = data as ProjectCaseStudyFrontmatter
-      if(!frontmatter.title || !frontmatter.description){
-        throw new Error(`Invalid frontmatter in ${slug}.mdx`);
-      }
-
-      return {
-        slug,
-        frontmatter,
-        content
-      }
-   } catch (error) {
-      console.error(`Error reading project case study ${slug}:`, error);
+    if (!fs.existsSync(fullPath)) {
       return null;
-   }   
+    }
+
+    const fileContent = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContent);
+
+    //validate data as fronmatter
+    const frontmatter = data as ProjectCaseStudyFrontmatter;
+    if (!frontmatter.title || !frontmatter.description) {
+      throw new Error(`Invalid frontmatter in ${slug}.mdx`);
+    }
+
+    return {
+      slug,
+      frontmatter,
+      content,
+    };
+  } catch (error) {
+    console.error(`Error reading project case study ${slug}:`, error);
+    return null;
+  }
 }
 
 /**
  * Get all project case studies with frontmatter only (for listing)
  */
-export function getAllProjectCaseStudies(): ProjectCaseStudyPreview[]{
-   const slugs = getProjectCaseStudySlugs();
+export function getAllProjectCaseStudies(): ProjectCaseStudyPreview[] {
+  const slugs = getProjectCaseStudySlugs();
 
-   const caseStudies = slugs
-     .map((slug) => {
-        const caseStudy = getProjectBySlug(slug); 
-        if (!caseStudy) return null;
+  const caseStudies = slugs
+    .map((slug) => {
+      const caseStudy = getProjectBySlug(slug);
+      if (!caseStudy) return null;
 
-        return {
-           slug: caseStudy.slug,
-           frontmatter: caseStudy.frontmatter,
-        };
-     })
-     .filter(
+      return {
+        slug: caseStudy.slug,
+        frontmatter: caseStudy.frontmatter,
+      };
+    })
+    .filter(
       (caseStudy): caseStudy is ProjectCaseStudyPreview => caseStudy !== null,
     )
     .sort((a, b) => {
@@ -77,12 +80,14 @@ export function getAllProjectCaseStudies(): ProjectCaseStudyPreview[]{
       return a.frontmatter.title.localeCompare(b.frontmatter.title);
     });
 
-   return caseStudies;
+  return caseStudies;
 }
 
-//get project which are published 
+//get project which are published
 
-export function getPublishedProject(): ProjectCaseStudyPreview[]{
-   const projectCaseStudies = getAllProjectCaseStudies()
-   return projectCaseStudies.filter((projectCaseStudy)=> projectCaseStudy.frontmatter.isPublished);
+export function getPublishedProject(): ProjectCaseStudyPreview[] {
+  const projectCaseStudies = getAllProjectCaseStudies();
+  return projectCaseStudies.filter(
+    (projectCaseStudy) => projectCaseStudy.frontmatter.isPublished,
+  );
 }

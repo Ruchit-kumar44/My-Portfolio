@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as z from "zod";
+import { NextRequest, NextResponse } from 'next/server';
+
+import * as z from 'zod';
 
 const ratelimitStore = new Map<string, { count: number; resetTime: number }>();
 
@@ -15,12 +16,12 @@ const ContactSchema = z.object({
 
 function getclientIP(request: NextRequest): string {
   // Get IP from various headers in order of preference
-  const forwarded = request.headers.get("x-forwarded-for");
-  const realIP = request.headers.get("x-real-ip");
-  const cfConnectingIP = request.headers.get("cf-connecting-ip");
+  const forwarded = request.headers.get('x-forwarded-for');
+  const realIP = request.headers.get('x-real-ip');
+  const cfConnectingIP = request.headers.get('cf-connecting-ip');
 
   if (forwarded) {
-    return forwarded.split(",")[0].trim();
+    return forwarded.split(',')[0].trim();
   }
   if (realIP) {
     return realIP;
@@ -29,7 +30,7 @@ function getclientIP(request: NextRequest): string {
     return cfConnectingIP;
   }
 
-  return "unknown";
+  return 'unknown';
 }
 
 //type for return in checkrateRatelimitfunction
@@ -78,16 +79,16 @@ async function sendToTelegram(data: {
   const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 
   if (!telegramToken) {
-    console.error("TELEGRAM_BOT_TOKEN not configured");
+    console.error('TELEGRAM_BOT_TOKEN not configured');
     return false;
   }
 
   if (!telegramChatId) {
-    console.error("TELEGRAM_CHAT_ID not configured");
+    console.error('TELEGRAM_CHAT_ID not configured');
     return false;
   }
 
-    const message = `
+  const message = `
      🔔 *New Contact Form Submission*
 
      👤 *Name:* ${data.name.trim()}
@@ -101,99 +102,102 @@ async function sendToTelegram(data: {
      📍 *Timezone:* ${Intl.DateTimeFormat().resolvedOptions().timeZone}
     `.trim();
 
-    try{
-        const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+  try {
+    const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
 
-        const response = await fetch(telegramUrl, {
-            method: 'Post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              chat_id: telegramChatId,
-              text: message,
-              parse_mode: 'Markdown',
-            })
-        });
+    const response = await fetch(telegramUrl, {
+      method: 'Post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: telegramChatId,
+        text: message,
+        parse_mode: 'Markdown',
+      }),
+    });
 
-        if(response.ok){
-            return true
-        } else{
-            const errorText = await response.text();
-            console.error('Failed to send to Telegram:', errorText);
-            return false;
-        }
-    } catch(error){
-        console.error('Error sending to Telegram:', error);
-        return false;
+    if (response.ok) {
+      return true;
+    } else {
+      const errorText = await response.text();
+      console.error('Failed to send to Telegram:', errorText);
+      return false;
     }
+  } catch (error) {
+    console.error('Error sending to Telegram:', error);
+    return false;
+  }
 }
 
-export async function POST(request: NextRequest){
-    try{
-        const clientIP = getclientIP(request);
-        const rateLimit = checkRateLimit(clientIP);
+export async function POST(request: NextRequest) {
+  try {
+    const clientIP = getclientIP(request);
+    const rateLimit = checkRateLimit(clientIP);
 
-        if(!rateLimit.allowed){
-            return NextResponse.json(
-                {
-                  error: 'Too many requests. Please try again later.',
-                  retryAfter: RATE_LIMIT_WINDOW / 1000,
-                },
-                {
-                    status: 429,
-                    headers: {
-                        'X-RateLimit-Limit': RATE_LIMIT_MAX_REQUESTS.toString(),
-                        'X-RateLimit-Remaining': rateLimit.remaining.toString(),
-                        'X-RateLimit-Reset': (Date.now() + RATE_LIMIT_WINDOW).toString(),
-                    }
-                }
-            )
-        }
-        const body = await request.json();
-        const validatedData = ContactSchema.parse(body);
-
-        const telegramSent = await sendToTelegram(validatedData)
-
-        if (!telegramSent) {
-           return NextResponse.json(
-              { error: 'Failed to send message. Please try again.' },
-              { status: 500 },
-            );
-        }
-
-        return NextResponse.json(
-            {
-              Message: "message semt successfully",
-              success: true
-           },
-           {
-              headers: {
-                  'X-RateLimit-Limit': RATE_LIMIT_MAX_REQUESTS.toString(),
-                  'X-RateLimit-Remaining': rateLimit.remaining.toString(),
-                }
-           }
-       );
-    } catch(error){
-        console.error('API Error:', error);
-
-        if (error instanceof z.ZodError) {
-          return NextResponse.json(
-             {
-                error: 'Invalid form data',
-                details: error
-              },
-             { status: 400 },
-           );
-       }
-
-        return NextResponse.json(
-           { error: 'Internal server error' },
-           { status: 500 },
-       );
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        {
+          error: 'Too many requests. Please try again later.',
+          retryAfter: RATE_LIMIT_WINDOW / 1000,
+        },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': RATE_LIMIT_MAX_REQUESTS.toString(),
+            'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+            'X-RateLimit-Reset': (Date.now() + RATE_LIMIT_WINDOW).toString(),
+          },
+        },
+      );
     }
+    const body = await request.json();
+    const validatedData = ContactSchema.parse(body);
+
+    const telegramSent = await sendToTelegram(validatedData);
+
+    if (!telegramSent) {
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again.' },
+        { status: 500 },
+      );
+    }
+
+    return NextResponse.json(
+      {
+        Message: 'message semt successfully',
+        success: true,
+      },
+      {
+        headers: {
+          'X-RateLimit-Limit': RATE_LIMIT_MAX_REQUESTS.toString(),
+          'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+        },
+      },
+    );
+  } catch (error) {
+    console.error('API Error:', error);
+
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid form data',
+          details: error,
+        },
+        { status: 400 },
+      );
+    }
+
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 },
+    );
+  }
 }
 
 export async function GET() {
-  return NextResponse.json({ error: 'Get Method not allowed' }, { status: 405 });
+  return NextResponse.json(
+    { error: 'Get Method not allowed' },
+    { status: 405 },
+  );
 }

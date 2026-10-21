@@ -1,35 +1,35 @@
-import { heroConfig } from "./Hero";
+import { heroConfig } from './Hero';
 
 export interface PageMeta {
   title: string;
   description: string;
   keywords?: string[];
   ogImage?: string;
-  twitterCard: "summary" | "summary_large_image";
+  twitterCard: 'summary' | 'summary_large_image';
 }
 
 // Base site configuration
 export const siteConfig = {
   name: heroConfig.name,
-  title: "Sleek Portfolio",
-  Description: "sleek portfolio by @Ruchit",
-  url: process.env.NEXT_PUBLIC_URL || "http://localhost:3000",
-  ogImage: "/meta/opengraph-image.png",
+  title: 'Sleek Portfolio',
+  Description: 'sleek portfolio by @Ruchit',
+  url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
+  ogImage: '/meta/opengraph-image.png',
   author: {
     name: 'Rachit thakur',
-    twitter: "@ramxcodes",
-    github: "ramxcodes",
-    linkedin: "ramxcodes",
-    email: "ramxcodes@gmail.com",
+    twitter: '@ramxcodes',
+    github: 'ramxcodes',
+    linkedin: 'ramxcodes',
+    email: 'ramxcodes@gmail.com',
   },
   keywords: [
-    "portfolio",
-    "developer",
-    "full-stack",
-    "react",
-    "nextjs",
-    "typescript",
-    "web development",
+    'portfolio',
+    'developer',
+    'full-stack',
+    'react',
+    'nextjs',
+    'typescript',
+    'web development',
     heroConfig.name.toLowerCase(),
   ],
 };
@@ -38,7 +38,7 @@ export const pageMetadata: Record<string, PageMeta> = {
   // Home page
   '/': {
     title: `${heroConfig.name} - ${heroConfig.title}`,
-    description:  'Explore my projects, experience, and technical expertise',
+    description: 'Explore my projects, experience, and technical expertise',
     keywords: [
       'portfolio',
       'developer',
@@ -50,7 +50,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     twitterCard: 'summary_large_image',
   },
 
-    // Contact page
+  // Contact page
   '/contact': {
     title: 'Contact - Get in Touch',
     description:
@@ -60,7 +60,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     twitterCard: 'summary',
   },
 
-    // Projects page
+  // Projects page
   '/projects': {
     title: 'Projects - My Work & Projects Portfolio',
     description:
@@ -76,7 +76,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     twitterCard: 'summary_large_image',
   },
 
-    // Blog page
+  // Blog page
   '/blogs': {
     title: 'Blog - Thoughts & Tutorials',
     description:
@@ -107,14 +107,12 @@ export const pageMetadata: Record<string, PageMeta> = {
     ogImage: '/meta/resume.png',
     twitterCard: 'summary',
   },
-
-}
+};
 
 // Helper function to get metadata for a specific page
 export function getPageMetadata(pathname: string): PageMeta {
   return pageMetadata[pathname] || pageMetadata['/'];
 }
-
 
 // Helper function to generate complete metadata object for Next.js
 export function generateMetadata(pathname: string) {

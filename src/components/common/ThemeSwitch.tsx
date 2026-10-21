@@ -1,45 +1,45 @@
-"use client"
+'use client';
 
-import { useTheme } from "next-themes"
-import { useState, useEffect, useCallback } from "react"
-import Sun from "../svgs/Sun"
-import Moon from "../svgs/Moon"
+import { useCallback, useEffect, useState } from 'react';
 
+import { useTheme } from 'next-themes';
 
-export default function ThemeSwitch(){
-    const {resolvedTheme, setTheme} = useTheme();
-    const [mounted, setMounted] = useState(false);
+import Moon from '../svgs/Moon';
+import Sun from '../svgs/Sun';
 
-    useEffect(()=>{
-      setMounted(true)
-    }, [])
+export default function ThemeSwitch() {
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-    const toggelTeme = useCallback(()=>{
-        const isDark = resolvedTheme === "dark";
-        const nextTheme = isDark ? "light": "dark"
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-        if (!document.startViewTransition) {
-           setTheme(nextTheme)
-           return
-        }
+  const toggelTeme = useCallback(() => {
+    const isDark = resolvedTheme === 'dark';
+    const nextTheme = isDark ? 'light' : 'dark';
 
-        document.startViewTransition(() => {
-            setTheme(nextTheme)
-        })
-    }, [resolvedTheme, setTheme])
+    if (!document.startViewTransition) {
+      setTheme(nextTheme);
+      return;
+    }
 
+    document.startViewTransition(() => {
+      setTheme(nextTheme);
+    });
+  }, [resolvedTheme, setTheme]);
 
-   if (!mounted) return null
+  if (!mounted) return null;
 
-    const isDark = resolvedTheme === "dark"
+  const isDark = resolvedTheme === 'dark';
 
-  return(
-     <button onClick={toggelTeme}
+  return (
+    <button
+      onClick={toggelTeme}
       aria-label="Toggle theme"
       className="cursor-pointer p-2 transition-transform active:scale-90"
-     >
-        {isDark? <Sun className="size-4"/>: <Moon className="size-4" />}
-     </button>
-  )
-
+    >
+      {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+    </button>
+  );
 }

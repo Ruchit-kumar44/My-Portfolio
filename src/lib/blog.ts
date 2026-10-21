@@ -1,69 +1,70 @@
-import path from "path";
-import fs from 'fs'
-import { BlogPost, BlogPostPreview, BlogsFrontmatter } from "@/types/Blog";
-import matter from "gray-matter";
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
-
-
+import { BlogPost, BlogPostPreview, BlogsFrontmatter } from '@/types/Blog';
 
 const blogDirectory = path.join(process.cwd(), 'src/data/blogs');
 
 // get all blog files from the blog directory
-export function getBlogPostsSlugs(): string[]{
-   if(!fs.existsSync(blogDirectory)){
-    return []
-   }
+export function getBlogPostsSlugs(): string[] {
+  if (!fs.existsSync(blogDirectory)) {
+    return [];
+  }
 
-   const files = fs.readdirSync(blogDirectory)
-   return files
-   .filter((file)=> file.endsWith('.mdx'))
-   .map((file)=> file.replace(/\.mdx$/, ''));
+  const files = fs.readdirSync(blogDirectory);
+  return files
+    .filter((file) => file.endsWith('.mdx'))
+    .map((file) => file.replace(/\.mdx$/, ''));
 }
 
 /**
  * Get blog post by slug with full content
  */
 
-export function getBlogPostBySlug(slug: string): BlogPost | null{
-    try {
-       const fullPath = path.join(blogDirectory, `${slug}.mdx`);
+export function getBlogPostBySlug(slug: string): BlogPost | null {
+  try {
+    const fullPath = path.join(blogDirectory, `${slug}.mdx`);
 
-       if(!fs.existsSync(fullPath)){
-        return null
-       }
-
-       const fileContents = fs.readFileSync(fullPath, 'utf8')
-       const {data, content} = matter(fileContents);
-
-        // validate fromtmatter a
-       const frontmatter = data as BlogsFrontmatter
-       if(!frontmatter.title || !frontmatter.description){
-        throw new Error(`Invalid frontmatter in ${slug}.mdx`);
-       }
-       return {
-        content, slug, frontmatter
-       };
-    } catch(error){
-        console.error(`Error reading blog post ${slug}:`, error);
-        return null;
+    if (!fs.existsSync(fullPath)) {
+      return null;
     }
+
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    // validate fromtmatter a
+    const frontmatter = data as BlogsFrontmatter;
+    if (!frontmatter.title || !frontmatter.description) {
+      throw new Error(`Invalid frontmatter in ${slug}.mdx`);
+    }
+    return {
+      content,
+      slug,
+      frontmatter,
+    };
+  } catch (error) {
+    console.error(`Error reading blog post ${slug}:`, error);
+    return null;
+  }
 }
 
 /**
  * Get all blog posts with frontmatter only (for listing page)
  */
 
-export function getAllBlogPosts(): BlogPostPreview[]{
-    const slugs = getBlogPostsSlugs();
+export function getAllBlogPosts(): BlogPostPreview[] {
+  const slugs = getBlogPostsSlugs();
 
-    const posts = slugs.map((slug)=>{
-        const post = getBlogPostBySlug(slug);
-       if (!post) return null;
+  const posts = slugs
+    .map((slug) => {
+      const post = getBlogPostBySlug(slug);
+      if (!post) return null;
 
-       return {
+      return {
         slug: post.slug,
-        frontmatter: post.frontmatter
-       };
+        frontmatter: post.frontmatter,
+      };
     })
     .filter((post): post is BlogPostPreview => post !== null)
     .sort((a, b) => {
@@ -80,9 +81,9 @@ export function getAllBlogPosts(): BlogPostPreview[]{
 /**
  * Get all published blog posts
  */
-export function getPublishedBlogPosts(): BlogPostPreview[]{
-    const allPosts = getAllBlogPosts();
-    return allPosts.filter((post)=> post.frontmatter.isPublished);
+export function getPublishedBlogPosts(): BlogPostPreview[] {
+  const allPosts = getAllBlogPosts();
+  return allPosts.filter((post) => post.frontmatter.isPublished);
 }
 
 // /**
@@ -103,7 +104,7 @@ export function getPublishedBlogPosts(): BlogPostPreview[]{
 // export function getAllTags(): string[]{
 //     const publishedPosts = getPublishedBlogPosts();
 //     const tagsSet = new Set<string>();
-   
+
 //     publishedPosts.forEach((post)=>{
 //         post.frontmatter.tags.forEach((tag)=>{
 //             tagsSet.add(tag.toLowerCase());
@@ -141,6 +142,6 @@ export function getPublishedBlogPosts(): BlogPostPreview[]{
 //     })
 //     .filter((item) => item.score > 0)
 //     .sort((a, b) => b.score - a.score);
-    
+
 //     return postsWithScore.slice(0, maxPosts).map((item) => item.post);
 // }

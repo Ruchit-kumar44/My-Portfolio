@@ -1,8 +1,7 @@
-import Image from "next/image";
-
+import Image from 'next/image';
 
 export const BlogComponents = {
-  //styling for image 
+  //styling for image
   img: ({
     src,
     alt,
@@ -12,7 +11,14 @@ export const BlogComponents = {
     alt: string;
     [key: string]: unknown;
   }) => (
-    <Image src={src} alt={alt} width={800} height={400} className="rounded-lg" {...props}/>
+    <Image
+      src={src}
+      alt={alt}
+      width={800}
+      height={400}
+      className="rounded-lg"
+      {...props}
+    />
   ),
   // Custom heading with better styling
   h1: ({
@@ -64,7 +70,7 @@ export const BlogComponents = {
     </p>
   ),
 
-   // Custom list styling
+  // Custom list styling
   ul: ({
     children,
     ...props
@@ -100,13 +106,13 @@ export const BlogComponents = {
   ),
 
   pre: ({ children, ...props }: { children: React.ReactNode }) => (
-      <pre
-           className="bg-muted/30 overflow-x-auto rounded-lg border p-4 text-sm [&>code]:bg-transparent [&>code]:p-0"
-          {...props}
-        >
-           {children}
-        </pre>
-    ),
+    <pre
+      className="bg-muted/30 overflow-x-auto rounded-lg border p-4 text-sm [&>code]:bg-transparent [&>code]:p-0"
+      {...props}
+    >
+      {children}
+    </pre>
+  ),
 
   // Inline code styling (not affected by syntax highlighting)
   code: ({

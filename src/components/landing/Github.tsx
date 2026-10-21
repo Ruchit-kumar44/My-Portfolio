@@ -1,8 +1,3 @@
-
-export default function GithubSection(){
-    return(
-        <div className="py-10 text-secondary w-full min-h-80">
-         
-        </div>
-    )
+export default function GithubSection() {
+  return <div className="text-secondary min-h-80 w-full py-10"></div>;
 }

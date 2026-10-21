@@ -1,13 +1,14 @@
-import Container from "@/components/common/Container";
-import {ProjectContent} from "@/components/projects/ProjectContent";
-import ArrowLeft from "@/components/svgs/ArrowLeft";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { siteConfig } from "@/config/Meta";
-import { getProjectBySlug, getProjectCaseStudySlugs } from "@/lib/project";
-import { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
+import Container from '@/components/common/Container';
+import { ProjectContent } from '@/components/projects/ProjectContent';
+import ArrowLeft from '@/components/svgs/ArrowLeft';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { siteConfig } from '@/config/Meta';
+import { getProjectBySlug, getProjectCaseStudySlugs } from '@/lib/project';
 
 interface ProjectCaseStudyPageProps {
   params: Promise<{ slug: string }>;
@@ -56,7 +57,6 @@ export async function generateMetadata({
   };
 }
 
-
 export default async function ProjectCaseStudyPage({
   params,
 }: ProjectCaseStudyPageProps) {
@@ -71,11 +71,7 @@ export default async function ProjectCaseStudyPage({
       <div className="space-y-12">
         {/* Back Button */}
         <div>
-          <Button
-            variant="ghost"
-            asChild
-            className="group"
-          >
+          <Button variant="ghost" asChild className="group">
             <Link href="/projects" className="flex items-center space-x-2">
               <ArrowLeft className="size-4" />
               <span>Back to Projects</span>

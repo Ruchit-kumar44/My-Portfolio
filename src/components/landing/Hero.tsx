@@ -1,11 +1,12 @@
-import Image from "next/image";
-import { heroConfig, socialLnks } from "@/config/Hero";
-import { Button } from "../ui/button";
-import CV from "../svgs/Cv";
-import Chat from "../svgs/Chat";
-import Link from "next/link";
-import { Tooltip, TooltipTrigger, TooltipContent } from "../ui/tooltip";
+import Image from 'next/image';
+import Link from 'next/link';
 
+import { heroConfig, socialLnks } from '@/config/Hero';
+
+import Chat from '../svgs/Chat';
+import CV from '../svgs/Cv';
+import { Button } from '../ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
 const buttonIcons = {
   CV: CV,
@@ -22,20 +23,20 @@ export default function HeroSection() {
           src={avatar}
           width={100}
           height={100}
-          priority={true} 
+          priority={true}
           fetchPriority="high"
           className="size-24 rounded-full"
         ></Image>
         <div className="flex items-center">
-          <h1 className="font-bold dark:text-white text-xl md:text-2xl">
-            {name} <br />{" "}
-            <span className="text-secondary text-xs md:text-xl font-light">
-             <span className="">{title}</span>
+          <h1 className="text-xl font-bold md:text-2xl dark:text-white">
+            {name} <br />{' '}
+            <span className="text-secondary text-xs font-light md:text-xl">
+              <span className="">{title}</span>
             </span>
           </h1>
         </div>
       </div>
-      <div className="mt-4 text-xs md:text-small  font-medium text-secondary">
+      <div className="md:text-small text-secondary mt-4 text-xs font-medium">
         Love building solid backends, breaking them, then building better ones.
       </div>
 
@@ -50,7 +51,7 @@ export default function HeroSection() {
             <Button
               key={index}
               asChild
-              variant={button.variant as "outline" | "default"}
+              variant={button.variant as 'outline' | 'default'}
             >
               <Link href={button.href}>
                 {IconComponent && <IconComponent />}
@@ -63,19 +64,22 @@ export default function HeroSection() {
 
       {/* social link mapping */}
       <div className="mt-3 flex gap-2">
-        {socialLnks.map((link)=>{
-          return(
-           <Tooltip key={link.name} delayDuration={0}>
-            <TooltipTrigger asChild>
-              <Link href={link.href} className="text-secondary flex items-center gap-2">
-                <span className="size-5.75">{link.icon}</span> 
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{link.name}</p>
-            </TooltipContent>
-           </Tooltip>
-          )
+        {socialLnks.map((link) => {
+          return (
+            <Tooltip key={link.name} delayDuration={0}>
+              <TooltipTrigger asChild>
+                <Link
+                  href={link.href}
+                  className="text-secondary flex items-center gap-2"
+                >
+                  <span className="size-5.75">{link.icon}</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{link.name}</p>
+              </TooltipContent>
+            </Tooltip>
+          );
         })}
       </div>
     </div>
