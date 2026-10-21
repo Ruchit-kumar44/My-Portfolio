@@ -8,7 +8,7 @@ import ArrowLeft from '@/components/svgs/ArrowLeft';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { siteConfig } from '@/config/Meta';
-import { getBlogPostBySlug, getBlogPostsSlugs } from '@/lib/blog';
+import { getBlogPostBySlug} from '@/lib/blog';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;

@@ -22,10 +22,10 @@ import { Field, FieldError, FieldGroup, FieldLabel } from '../ui/field';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 
-//to show heading as optional
-interface contactHeading {
-  show?: boolean;
-}
+// //to show heading as optional
+// interface contactHeading {
+//   show?: boolean;
+// }
 
 const contactFormShecma = z.object({
   name: z.string().min(2, {
@@ -94,7 +94,7 @@ export default function ContactSection() {
   return (
     <div className="w-full py-8">
       <h1 className="text-center text-3xl font-black md:text-6xl">
-        Let's Work <br /> Together
+        Let&apos;s Work <br /> Together
       </h1>
 
       <Card className="mt-5 border-none shadow-none md:mt-10">

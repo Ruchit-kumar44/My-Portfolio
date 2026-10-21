@@ -4,7 +4,6 @@ import { BlogPostPreview } from '@/types/Blog';
 
 import { BlogList } from '../blog/BlogList';
 import SectionHeading from '../common/SectioHeading';
-import { Reveal } from '../motion/Reveal';
 import { Button } from '../ui/button';
 
 interface BlogPropsList {

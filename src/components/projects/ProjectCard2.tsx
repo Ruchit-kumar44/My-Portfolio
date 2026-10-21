@@ -32,9 +32,7 @@ export default function ProjectCard2({ project }: ProjectCardProps) {
           {technologies.map((technology) => (
             <TechBadge
               key={technology.name}
-              name={technology.name}
-              children={technology.icon}
-            />
+              name={technology.name}>{technology.icon}</TechBadge>
           ))}
         </div>
       </div>

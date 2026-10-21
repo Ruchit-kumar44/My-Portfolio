@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Link from 'next/link';
-
 interface skillProps {
   name: string;
   href?: string;

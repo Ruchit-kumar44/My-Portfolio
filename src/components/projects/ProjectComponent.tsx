@@ -274,7 +274,7 @@ export const ProjectComponents = {
       return '';
     };
 
-    const codeText = getTextContent(children);
+    getTextContent(children);
 
     return (
       <div className="group relative mb-4">
@@ -331,4 +331,5 @@ export const ProjectComponents = {
   ProjectMeta,
   Challenges,
   Learnings,
+
 };

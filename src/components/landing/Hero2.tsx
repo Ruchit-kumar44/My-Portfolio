@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { heroConfig } from '@/config/Hero';
 
 export default function HeroPage2() {
-  const { name, title, avatar, buttons } = heroConfig;
+  const { name, avatar, } = heroConfig;
 
   return (
     <div className="flex justify-center">
@@ -16,7 +16,7 @@ export default function HeroPage2() {
           className="size-20 rounded-full"
         />
         <h1 className="flex flex-col items-center text-2xl font-black dark:text-white">
-          Hi I'm {name}
+          Hi I&apos;m {name}
         </h1>
       </div>
     </div>
