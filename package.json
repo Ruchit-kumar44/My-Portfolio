@@ -10,15 +10,16 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --check '**/*.{js,jsx,ts,tsx,json,md}'",
     "format:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:staged": "lint-staged"
   },
   "lint-staged": {
     "**/*..{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettierrc --write"
+      "prettier --config .prettierrc --write"
     ],
     "**/*.{json,md,css. scss}": [
-      "prettierrc --write"
+      "prettier --config .prettierrc --write"
     ]
   },
   "dependencies": {
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/node": "^26.6.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",

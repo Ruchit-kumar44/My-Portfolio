@@ -1,6 +1,3 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "🔍running lint-staged on staged files..."
 npm run lint:staged
 
