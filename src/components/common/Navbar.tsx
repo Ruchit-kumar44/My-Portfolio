@@ -23,6 +23,7 @@ export default function Navbar() {
             return (
               <Link
                 href={item.href}
+                scroll = {false}
                 key={item.label}
                 className={cn(
                   'transition-all duration-300 hover:text-black dark:hover:text-white',

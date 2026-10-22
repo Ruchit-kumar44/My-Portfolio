@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 
 import { TooltipProvider } from '../components/ui/tooltip';
 import './globals.css';
+import ScrollToTop from '@/components/motion/ScrollTop';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -32,7 +33,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         >
           <ReactLenis root>
             <Navbar />
-            <TooltipProvider>{children}</TooltipProvider>
+            <TooltipProvider>
+              <ScrollToTop />
+              {children}
+            </TooltipProvider>
             <Footer />
             <RevealDiv></RevealDiv>
           </ReactLenis>
