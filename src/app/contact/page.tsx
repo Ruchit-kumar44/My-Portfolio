@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Container from '@/components/common/Container';
 import ContactSection from '@/components/landing/Contact';
 import { generateMetadata as getMetadata } from '@/config/Meta';
+import { Reveal } from '@/components/motion/Reveal';
 
 export const metadata: Metadata = {
   ...getMetadata('/contact'),
@@ -21,8 +22,10 @@ export const metadata: Metadata = {
 
 export default function Contacts() {
   return (
-    <Container>
-      <ContactSection />
-    </Container>
+    <Reveal>
+      <Container>
+        <ContactSection />
+      </Container>
+    </Reveal>
   );
 }

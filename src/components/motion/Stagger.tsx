@@ -5,7 +5,7 @@ import { type Variants, motion } from 'motion/react';
 const container: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.09 },
+    transition: { staggerChildren: 0.14 },
   },
 };
 
