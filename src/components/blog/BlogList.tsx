@@ -27,7 +27,7 @@ export function BlogList({
 
   return (
     <StaggerList
-      className={`blog-list flex flex-col space-y-5 lg:space-y-5 ${className}`}
+      className={`flex flex-col space-y-5 lg:space-y-5 ${className}`}
     >
       {posts.map((post) => (
         <StaggerItem key={post.slug}>

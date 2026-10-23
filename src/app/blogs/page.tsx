@@ -35,7 +35,7 @@ export default function BlogPage() {
             </p>
           </div>
           <Separator />
-          <BlogList showTags={true} posts={posts} />
+          <BlogList className='blog-list' showTags={true} posts={posts} />
         </div>
       </Container>
     </Reveal>
