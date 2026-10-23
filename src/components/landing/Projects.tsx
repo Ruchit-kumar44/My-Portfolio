@@ -9,7 +9,7 @@ import { Button } from '../ui/button';
 export default function ProjectsSection() {
   return (
     <div className="pt-10">
-      <SectionHeading heading="Projects" className="mb-1" />
+      <SectionHeading heading="Projects" className="mb-5" />
       <ProjectList className="" projects={projects.slice(0, 3)} />
       <div className="mt-5 flex justify-center">
         <Button variant="outline">
