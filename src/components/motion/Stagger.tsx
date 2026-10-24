@@ -5,12 +5,12 @@ import { type Variants, motion } from 'motion/react';
 const container: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.14 },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
@@ -29,7 +29,7 @@ export function StaggerList({ children, className }: StaggerProps) {
       className={className}
       variants={container}
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       viewport={{ once: true, margin: '0px 0px -80px 0px' }}
     >
       {children}

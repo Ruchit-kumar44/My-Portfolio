@@ -5,9 +5,11 @@ import { projects } from '@/config/Projects';
 import SectionHeading from '../common/SectioHeading';
 import ProjectList from '../projects/ProjectList';
 import { Button } from '../ui/button';
+import { Reveal } from '../motion/Reveal';
 
 export default function ProjectsSection() {
   return (
+    <Reveal>
     <div className="pt-10">
       <SectionHeading heading="Projects" className="mb-5" />
       <ProjectList className="" projects={projects.slice(0, 3)} />
@@ -19,5 +21,6 @@ export default function ProjectsSection() {
         </Button>
       </div>
     </div>
+    </Reveal>
   );
 }

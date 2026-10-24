@@ -7,6 +7,7 @@ import Chat from '../svgs/Chat';
 import CV from '../svgs/Cv';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
+import { StaggerItem, StaggerList } from '../motion/Stagger';
 
 const buttonIcons = {
   CV: CV,
@@ -63,17 +64,20 @@ export default function HeroSection() {
       </div>
 
       {/* social link mapping */}
-      <div className="mt-3 flex gap-2">
+      <StaggerList>
+      <div className="mt-5 flex gap-2">
         {socialLnks.map((link) => {
           return (
             <Tooltip key={link.name} delayDuration={0}>
               <TooltipTrigger asChild>
+                <StaggerItem>
                 <Link
                   href={link.href}
                   className="text-secondary flex items-center gap-2"
                 >
                   <span className="size-5.75">{link.icon}</span>
                 </Link>
+                </StaggerItem>
               </TooltipTrigger>
               <TooltipContent>
                 <p>{link.name}</p>
@@ -82,6 +86,7 @@ export default function HeroSection() {
           );
         })}
       </div>
+      </StaggerList>
     </div>
   );
 }
