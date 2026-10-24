@@ -3,9 +3,10 @@ import LinkedIn from '@/components/svgs/Linkedin';
 import Mail from '@/components/svgs/Mail';
 import X from '@/components/svgs/X';
 
+
+
 export const heroConfig = {
   name: 'Ruchit thakur',
-  title: 'A backend focused full stack Engineer.',
   avatar: '/images/animeLogo.png',
 
   // Buttons Configuration

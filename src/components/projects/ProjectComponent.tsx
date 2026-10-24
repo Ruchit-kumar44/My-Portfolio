@@ -175,7 +175,7 @@ export const ProjectComponents = {
     children: React.ReactNode;
     [key: string]: unknown;
   }) => (
-    <h1 className="mb-6 text-4xl font-bold" {...props}>
+    <h1 className="mb-6 sm:xl md:text-2xl font-bold" {...props}>
       {children}
     </h1>
   ),
