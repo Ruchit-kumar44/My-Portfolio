@@ -7,6 +7,7 @@ import X from '@/components/svgs/X';
 
 export const heroConfig = {
   name: 'Ruchit thakur',
+  title: 'A Backend focused fullStack Engineer.',
   avatar: '/images/animeLogo.png',
 
   // Buttons Configuration

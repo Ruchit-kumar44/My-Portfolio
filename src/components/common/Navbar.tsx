@@ -22,6 +22,7 @@ export default function Navbar() {
             const isActive = pathName === item.href;
             return (
               <Link
+                data-sound="click"
                 href={item.href}
                 scroll = {false}
                 key={item.label}

@@ -12,10 +12,11 @@ import { cn } from '@/lib/utils';
 import { TooltipProvider } from '../components/ui/tooltip';
 import './globals.css';
 import ScrollToTop from '@/components/motion/ScrollTop';
+import ClickSoundProvider from '@/components/common/SoundProvider';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
-export const metadata = getMetadata('/');
+export const metadata = getMetadata('/');                                         
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
@@ -32,12 +33,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
           disableTransitionOnChange
         >
           <ReactLenis root>
+            <ClickSoundProvider>
             <Navbar />
             <TooltipProvider>
               <ScrollToTop />
               {children}
             </TooltipProvider>
             <Footer />
+            </ClickSoundProvider>
             <RevealDiv></RevealDiv>
           </ReactLenis>
         </ThemeProvider>
