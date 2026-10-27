@@ -15,7 +15,7 @@ export default function ProjectsSection() {
       <ProjectList className="" projects={projects.slice(0, 3)} />
       <div className="mt-5 flex justify-center">
         <Button variant="outline">
-          <Link href="/projects">
+          <Link data-sound="click" href="/projects">
             <span className="md:text-small text-xs">Show all projects</span>
           </Link>
         </Button>

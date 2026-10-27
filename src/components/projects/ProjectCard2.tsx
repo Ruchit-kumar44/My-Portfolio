@@ -14,6 +14,7 @@ export default function ProjectCard2({ project }: ProjectCardProps) {
 
   return (
     <Link
+      data-sound="click"
       href={projectDetailsPageSlug}
       className="duration-0.8 relative block h-50 w-79 overflow-hidden rounded-lg transition-transform ease-out hover:scale-101"
     >

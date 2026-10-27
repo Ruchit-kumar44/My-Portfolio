@@ -16,6 +16,7 @@ export default function Footer() {
             <div className="flex w-full flex-wrap items-center gap-x-4 gap-y-1 font-[#4D4C4D] font-medium">
               {PageLinks.map((page) => (
                 <Link
+                  data-sound="click"
                   className="transition-colors duration-300 hover:text-black dark:hover:text-white"
                   key={page.label}
                   href={page.href}
@@ -30,6 +31,7 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
               {footerSocialLinks.map((link) => (
                 <Button
+                  data-sound="click"
                   key={link.name}
                   variant={'outline'}
                   asChild

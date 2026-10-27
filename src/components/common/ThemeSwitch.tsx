@@ -38,6 +38,7 @@ export default function ThemeSwitch() {
 
   return (
     <button
+      data-sound="click"
       onClick={toggelTeme}
       aria-label="Toggle theme"
       className="cursor-pointer p-2 transition-transform active:scale-90"

@@ -55,6 +55,7 @@ export default function HeroSection() {
 
           return (
             <Button
+             data-sound="click"
               key={index}
               asChild
               variant={button.variant as 'outline' | 'default'}
@@ -77,6 +78,7 @@ export default function HeroSection() {
               <TooltipTrigger asChild>
                 <StaggerItem>
                 <Link
+                  data-sound="click"
                   href={link.href}
                   className="text-secondary flex items-center gap-2"
                 >

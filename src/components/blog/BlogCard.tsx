@@ -22,7 +22,7 @@ export default function BlogCard2({ post, showTags = true }: BlogCardProps) {
   });
 
   return (
-    <Link className="blog-card group w-full pb-4 transition-[filter] duration-300" href={`/blogs/${slug}`}>
+    <Link data-sound="click" className="blog-card group w-full pb-4 transition-[filter] duration-300" href={`/blogs/${slug}`}>
       <h3 className="text-foreground text-[16px] font-bold md:text-[18px]">
         {title}
       </h3>

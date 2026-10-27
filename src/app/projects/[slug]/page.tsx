@@ -72,7 +72,7 @@ export default async function ProjectCaseStudyPage({
         {/* Back Button */}
         <div>
           <Button variant="ghost" asChild className="group">
-            <Link href="/projects" className="flex items-center space-x-2">
+            <Link data-sound="click" href="/projects" className="flex items-center space-x-2">
               <ArrowLeft className="size-4" />
               <span>Back to Projects</span>
             </Link>
@@ -88,7 +88,7 @@ export default async function ProjectCaseStudyPage({
         <div className="text-center">
           <Separator className="mb-8" />
           <Button asChild size="lg">
-            <Link href="/projects">View All Projects</Link>
+            <Link data-sound="click" href="/projects">View All Projects</Link>
           </Button>
         </div>
       </div>
