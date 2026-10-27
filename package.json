@@ -14,11 +14,11 @@
     "lint:staged": "lint-staged"
   },
   "lint-staged": {
-    "**/*..{js,jsx,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --config .prettierrc --write"
     ],
-    "**/*.{json,md,css. scss}": [
+    "**/*.{json,md,css, scss}": [
       "prettier --config .prettierrc --write"
     ]
   },

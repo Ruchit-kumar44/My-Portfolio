@@ -8,7 +8,7 @@ import ArrowLeft from '@/components/svgs/ArrowLeft';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { siteConfig } from '@/config/Meta';
-import { getBlogPostBySlug} from '@/lib/blog';
+import { getBlogPostBySlug } from '@/lib/blog';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -63,7 +63,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="space-y-12">
         <div>
           <Button variant="ghost" asChild className="group">
-            <Link data-sound="click" href="/blogs" className="flex items-center space-x-2">
+            <Link
+              data-sound="click"
+              href="/blogs"
+              className="flex items-center space-x-2"
+            >
               <ArrowLeft className="size-4" />
               <span>Back to Blog</span>
             </Link>
@@ -75,7 +79,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="text-center">
           <Separator className="mb-8" />
           <Button asChild size="lg">
-            <Link data-sound="click" href="/blogs">View All Blogs</Link>
+            <Link data-sound="click" href="/blogs">
+              View All Blogs
+            </Link>
           </Button>
         </div>
       </div>

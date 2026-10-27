@@ -31,9 +31,9 @@ export default function ProjectCard2({ project }: ProjectCardProps) {
         <h3 className="text-[17px] font-black text-white">{title}</h3>
         <div className="items center flex shrink-0 -space-x-3">
           {technologies.map((technology) => (
-            <TechBadge
-              key={technology.name}
-              name={technology.name}>{technology.icon}</TechBadge>
+            <TechBadge key={technology.name} name={technology.name}>
+              {technology.icon}
+            </TechBadge>
           ))}
         </div>
       </div>

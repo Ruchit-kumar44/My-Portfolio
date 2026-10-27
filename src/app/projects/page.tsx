@@ -28,9 +28,7 @@ export default function Projects() {
       <Container className="py-12">
         <div className="space-y-8">
           <div className="">
-            <h1 className="text-2xl font-bold tracking-tight">
-              Projects
-            </h1>
+            <h1 className="text-2xl font-bold tracking-tight">Projects</h1>
             <p className="text-secondary text-[16px]">
               My projects and work across different technologies and domains.
             </p>

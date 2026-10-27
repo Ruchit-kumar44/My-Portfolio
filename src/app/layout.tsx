@@ -5,18 +5,18 @@ import ReactLenis from 'lenis/react';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import RevealDiv from '@/components/common/RevealDiv';
+import ClickSoundProvider from '@/components/common/SoundProvider';
 import ThemeProvider from '@/components/common/ThemeProvider';
+import ScrollToTop from '@/components/motion/ScrollTop';
 import { generateMetadata as getMetadata } from '@/config/Meta';
 import { cn } from '@/lib/utils';
 
 import { TooltipProvider } from '../components/ui/tooltip';
 import './globals.css';
-import ScrollToTop from '@/components/motion/ScrollTop';
-import ClickSoundProvider from '@/components/common/SoundProvider';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
-export const metadata = getMetadata('/');                                         
+export const metadata = getMetadata('/');
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
@@ -34,12 +34,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         >
           <ReactLenis root>
             <ClickSoundProvider>
-            <Navbar />
-            <TooltipProvider>
-              <ScrollToTop />
-              {children}
-            </TooltipProvider>
-            <Footer />
+              <Navbar />
+              <TooltipProvider>
+                <ScrollToTop />
+                {children}
+              </TooltipProvider>
+              <Footer />
             </ClickSoundProvider>
             <RevealDiv></RevealDiv>
           </ReactLenis>

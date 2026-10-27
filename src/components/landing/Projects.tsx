@@ -3,24 +3,24 @@ import Link from 'next/link';
 import { projects } from '@/config/Projects';
 
 import SectionHeading from '../common/SectioHeading';
+import { Reveal } from '../motion/Reveal';
 import ProjectList from '../projects/ProjectList';
 import { Button } from '../ui/button';
-import { Reveal } from '../motion/Reveal';
 
 export default function ProjectsSection() {
   return (
     <Reveal>
-    <div className="pt-10">
-      <SectionHeading heading="Projects" className="mb-5" />
-      <ProjectList className="" projects={projects.slice(0, 3)} />
-      <div className="mt-5 flex justify-center">
-        <Button variant="outline">
-          <Link data-sound="click" href="/projects">
-            <span className="md:text-small text-xs">Show all projects</span>
-          </Link>
-        </Button>
+      <div className="pt-10">
+        <SectionHeading heading="Projects" className="mb-5" />
+        <ProjectList className="" projects={projects.slice(0, 3)} />
+        <div className="mt-5 flex justify-center">
+          <Button variant="outline">
+            <Link data-sound="click" href="/projects">
+              <span className="md:text-small text-xs">Show all projects</span>
+            </Link>
+          </Button>
+        </div>
       </div>
-    </div>
     </Reveal>
   );
 }

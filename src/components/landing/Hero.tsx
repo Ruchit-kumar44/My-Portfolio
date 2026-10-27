@@ -1,16 +1,13 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { heroConfig, socialLnks } from '@/config/Hero';
 
+import RotatingText from '../common/RotatingText';
 import Chat from '../svgs/Chat';
 import CV from '../svgs/Cv';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
-import { StaggerItem, StaggerList } from '../motion/Stagger';
-import RotatingText from '../common/RotatingText';
-
 
 const buttonIcons = {
   CV: CV,
@@ -20,7 +17,6 @@ const buttonIcons = {
 export default function HeroSection() {
   const { name, avatar, buttons } = heroConfig;
 
-  
   return (
     <div className="pt-6">
       <div className="flex gap-5">
@@ -37,8 +33,8 @@ export default function HeroSection() {
           <h1 className="text-xl font-bold md:text-2xl dark:text-white">
             {name} <br />{' '}
             <span className="text-secondary overflow-hidden text-xs font-light md:text-xl">
-    <RotatingText/>
-  </span>
+              <RotatingText />
+            </span>
           </h1>
         </div>
       </div>
@@ -55,7 +51,7 @@ export default function HeroSection() {
 
           return (
             <Button
-             data-sound="click"
+              data-sound="click"
               key={index}
               asChild
               variant={button.variant as 'outline' | 'default'}
@@ -70,13 +66,11 @@ export default function HeroSection() {
       </div>
 
       {/* social link mapping */}
-      <StaggerList>
       <div className="mt-5 flex gap-2">
         {socialLnks.map((link) => {
           return (
             <Tooltip key={link.name} delayDuration={0}>
               <TooltipTrigger asChild>
-                <StaggerItem>
                 <Link
                   data-sound="click"
                   href={link.href}
@@ -84,7 +78,6 @@ export default function HeroSection() {
                 >
                   <span className="size-5.75">{link.icon}</span>
                 </Link>
-                </StaggerItem>
               </TooltipTrigger>
               <TooltipContent>
                 <p>{link.name}</p>
@@ -93,7 +86,6 @@ export default function HeroSection() {
           );
         })}
       </div>
-      </StaggerList>
     </div>
   );
 }

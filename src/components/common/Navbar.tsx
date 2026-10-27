@@ -24,7 +24,7 @@ export default function Navbar() {
               <Link
                 data-sound="click"
                 href={item.href}
-                scroll = {false}
+                scroll={false}
                 key={item.label}
                 className={cn(
                   'transition-all duration-300 hover:text-black dark:hover:text-white',

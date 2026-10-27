@@ -1,7 +1,6 @@
 import SectionHeading from '../common/SectioHeading';
 import { Separator } from '../ui/separator';
 
-
 export default function AboutSection() {
   return (
     <div className="pb-10">

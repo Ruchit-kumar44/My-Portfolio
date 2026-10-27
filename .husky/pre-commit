@@ -1,5 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
 echo "🔍running lint-staged on staged files..."
-npm run lint:staged
+npm run lint-staged
 
 echo "✅linting completed"
 

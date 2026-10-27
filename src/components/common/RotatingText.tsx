@@ -1,11 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from  'motion/react'
+import { useEffect, useState } from 'react';
+
+import { AnimatePresence, motion } from 'motion/react';
 
 export default function RotatingText() {
-  const titles = ['A Backend focused fullStack Engineer.', 'Backend Engineer', 'Frontend Engineer'];
-  
+  const titles = [
+    'A Backend focused fullStack Engineer.',
+    'Backend Engineer',
+    'Frontend Engineer',
+  ];
 
   const [index, setIndex] = useState(0);
 
@@ -13,7 +17,7 @@ export default function RotatingText() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [titles.length]);
 
@@ -25,7 +29,7 @@ export default function RotatingText() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
-        //   whileHover={{color: "#a855f7",  }} 
+          //   whileHover={{color: "#a855f7",  }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="inline-block"
         >

@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 
 import Container from '@/components/common/Container';
 import ContactSection from '@/components/landing/Contact';
-import { generateMetadata as getMetadata } from '@/config/Meta';
 import { Reveal } from '@/components/motion/Reveal';
+import { generateMetadata as getMetadata } from '@/config/Meta';
 
 export const metadata: Metadata = {
   ...getMetadata('/contact'),

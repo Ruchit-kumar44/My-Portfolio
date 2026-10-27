@@ -1,4 +1,3 @@
-
 export default function Copy({ className }: { className?: string }) {
   return (
     <svg
